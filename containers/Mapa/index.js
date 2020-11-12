@@ -10,7 +10,9 @@ const Map = () => {
         }
       )
       return <LeafletMap /> */
-
+        return(
+          <></>
+        )
   /* return (
     <div suppressHydrationWarning={true}>
       {process.browser && <LeafletMap />}
