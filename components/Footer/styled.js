@@ -1,10 +1,11 @@
 import styled from "styled-components";
 
 const Container = styled.div`
-width: 100vw;
+margin-top: 2em;
+max-width: 100vw;
 height: 200px;
 position: absolute;
-bottom: 0;
+/* bottom: 0; */
 background-color: white;
 color: #222222;
 display: flex;

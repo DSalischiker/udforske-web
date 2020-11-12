@@ -1,4 +1,5 @@
 import GlobalStyle from '../constants/globalStyle';
+import Head from "next/head";
 import { Layout } from 'containers';
 import { AuthProvider } from 'lib/useUser';
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -8,6 +9,7 @@ function MyApp({ Component, pageProps }) {
   library.add(fab, faCoffee);
   return(
     <>
+    <Head />
       <GlobalStyle />
       <AuthProvider>
         <Layout>

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const Container = styled.div`
-width: 100vw;
+max-width: 100vw;
 height: 75px;
 background-color: #222222;
 color: white;
@@ -12,6 +12,7 @@ align-items: center;
 img{
     margin-left: 4em;
     width: 8em;
+
 }
 `;
 

@@ -9,27 +9,27 @@ const Nav = ({ children }) => {
       <NavContainer>
         <li>
           <Link href="/">
-            <a>home_</a>
+            <a>home</a>
           </Link>
         </li>
         <li>
-          <Link href="/colecciones">
-            <a>mapa_</a>
+          <Link href="/mapa">
+            <a>mapa</a>
           </Link>
         </li>
         <li>
-          <Link href="/comprar">
-            <a>series_</a>
+          <Link href="/series">
+            <a>series</a>
           </Link>
         </li>
         <li>
-          <Link href="/contacto">
-            <a>tienda_</a>
+          <Link href="/shop">
+            <a>tienda</a>
           </Link>
         </li>
         <li>
           <Link href='https://instagram.com/udforske_'>
-            <a target='_blank'>instagram_</a>
+            <a target='_blank'>instagram</a>
           </Link>
         </li>
         {!auth.user ? (

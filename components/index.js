@@ -12,3 +12,21 @@ export {default as LoginForm} from './LoginForm';
 
 //SIGNUPFORM
 export {default as SignupForm} from './SignupForm';
+
+//HEROSLIDER
+export {default as HeroSlider} from './HeroSlider';
+
+//BIO
+export {default as Bio} from './Bio';
+
+//LEAFLETMAP
+export {default as LeafletMap} from './LeafletMap';
+
+//PHOTOBUTTON
+export {default as PhotoButton} from './PhotoButton';
+
+//SERIESITEM
+export {default as SeriesItem} from './SeriesItem';
+
+//SERIESDATA
+export {default as SeriesData} from './SeriesData';
