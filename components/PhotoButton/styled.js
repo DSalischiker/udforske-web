@@ -29,7 +29,7 @@ const Container = styled.a`
     z-index: 1;
     filter: brightness(75%);
   }
-  background: url("${(props) => props.src}");
+  /* background: url("${(props) => props.src}"); */
   /* background-image: url('${(props) => props.background}');
   background-size: 100%; */
 

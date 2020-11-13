@@ -10,7 +10,7 @@ body {
 }
 
 .inner {max-width:1200px; margin: 0 auto;}
-button { width: 140px; cursor: pointer; opacity: .8; background: #fff; border:0; text-transform: uppercase; padding:20px 20px!important; color:#fff; background-color:#000; margin:0 auto;margin-left:20px; border-radius:20px; font-weight:800; text-align:center;}
+button { width: 140px; cursor: pointer; opacity: .8; background: #fff; border:0; text-transform: uppercase; padding:20px 20px !important; color:#fff; background-color:#000; margin:0 auto;margin-left:20px; border-radius:20px; font-weight:800; text-align:center;}
 button:first-child {margin-left:0;}
 .red {background-color: #ff0000;}
 .orange {background-color: #FF5000!important;}

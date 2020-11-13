@@ -29,6 +29,7 @@ const Container = styled.div`
   }
   div.Text {
     color: white;
+    opacity: 1 !important;
     font-size: 20px;
     position: absolute;
     top: 50%;

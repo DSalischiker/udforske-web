@@ -18,6 +18,9 @@ const Container = styled.div`
   .Vertical {
     width:50%;
   }
+  .Horizontal {
+    width: 100%;
+  }
 `;
 
 export { Container };

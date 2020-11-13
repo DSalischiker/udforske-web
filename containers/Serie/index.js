@@ -6,6 +6,7 @@ const Serie = () => {
       <section>
         {/* MAP DE IMÁGENES */}
         <div className='Grid'>
+          <img className='Horizontal' src='/seriesitemprueba.jpg'/>
         <img className='Vertical' src='/seriesitemprueba1.png'/>
         <img className='Vertical' src='/seriesitemprueba1.png'/>
         </div>

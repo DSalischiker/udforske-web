@@ -13,6 +13,9 @@ export {default as LoginForm} from './LoginForm';
 //SIGNUPFORM
 export {default as SignupForm} from './SignupForm';
 
+//QUOTESFORM
+export {default as QuotesForm} from './QuotesForm';
+
 //HEROSLIDER
 export {default as HeroSlider} from './HeroSlider';
 

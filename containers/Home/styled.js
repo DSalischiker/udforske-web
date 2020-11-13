@@ -11,8 +11,8 @@ const Container = styled.div`
     margin: 2em 0;
   }
   div.Hero-Container {
-    max-width: 100%;
-    max-height: 90vh;
+    max-width: 100vw;
+    max-height: (100vh - 75px) !important;
   }
   div.Index-Container {
     margin: 100px auto 0 auto !important;

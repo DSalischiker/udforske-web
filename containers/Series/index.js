@@ -6,15 +6,15 @@ const Series = () => {
             <section>
             <div className='Grid'>
                 {/* ACÁ VA UN .MAP DE SERIES COLLECTION*/}
-                <SeriesItem className='Item' href='/series/asd' src='seriesitemprueba.jpg' name='Serie 1'/>
-                <SeriesItem className='Item' href='/series/asd' src='seriesitemprueba.jpg' name='Serie 2'/>
-                <SeriesItem className='Item' href='/series/asd' src='seriesitemprueba.jpg' name='Serie 3'/>
-                <SeriesItem className='Item' href='/series/asd' src='seriesitemprueba.jpg' name='Serie 4'/>
-                <SeriesItem className='Item' href='/series/asd' src='seriesitemprueba.jpg' name='Serie 5'/>
-                <SeriesItem className='Item' href='/series/asd' src='seriesitemprueba.jpg' name='Serie 6'/>
-                <SeriesItem className='Item' href='/series/asd' src='seriesitemprueba.jpg' name='Serie 7'/>
-                <SeriesItem className='Item' href='/series/asd' src='seriesitemprueba.jpg' name='Serie 8'/>
-                <SeriesItem className='Item' href='/series/asd' src='seriesitemprueba.jpg' name='Serie 9'/>
+                <SeriesItem className='Item' href='/series/asd' src='/seriesitemprueba.jpg' name='Atacama'/>
+                <SeriesItem className='Item' href='/series/asd' src='/seriesitemprueba.jpg' name='Jujuy'/>
+                <SeriesItem className='Item' href='/series/asd' src='/seriesitemprueba.jpg' name='Salta'/>
+                <SeriesItem className='Item' href='/series/asd' src='/seriesitemprueba.jpg' name='Rocha'/>
+                <SeriesItem className='Item' href='/series/asd' src='/seriesitemprueba.jpg' name='Astros'/>
+                <SeriesItem className='Item' href='/series/asd' src='/seriesitemprueba.jpg' name='Eclipses'/>
+                <SeriesItem className='Item' href='/series/asd' src='/seriesitemprueba.jpg' name='Uyuni'/>
+                <SeriesItem className='Item' href='/series/asd' src='/seriesitemprueba.jpg' name='Payunia'/>
+                <SeriesItem className='Item' href='/series/asd' src='/seriesitemprueba.jpg' name='Los Molles'/>
             </div>
             </section>
         </Container>

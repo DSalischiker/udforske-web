@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 const Container = styled.div`
 margin-top: 2em;
-max-width: 100vw;
+width: 100%;
+max-width: 100%;
 height: 200px;
 position: absolute;
 /* bottom: 0; */
@@ -55,7 +56,7 @@ img{
     display: flex;
     justify-content: space-between;
 align-items: center;
-width: 100vw;
+width: 100%;
 height: 200px;
 
 }

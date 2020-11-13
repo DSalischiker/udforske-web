@@ -10,9 +10,37 @@ const Container = styled.div`
   width: 1200px;
   max-width: 1200px !important;
   margin: 100px auto;
+
+  @media (min-width: 400px){
+    .Grid{
+      display:grid;
+      grid-template-columns: 1fr;
+    }
+  }
+  @media (min-width: 700px) {
+    .Grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 900px) {
+    .Grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .Item:nth-child(3) {
+      grid-row: span 2;
+    }
+    .Item:nth-child(4) {
+      grid-column: span 2;
+      grid-row: span 2;
+    }
+  }
   .Grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    width: 100%;
+    /* display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); */
     grid-gap: 2em;
   }
   .Item {
