@@ -16,6 +16,12 @@ export {default as SignupForm} from './SignupForm';
 //QUOTESFORM
 export {default as QuotesForm} from './QuotesForm';
 
+//LISTQUOTES
+export {default as ListQuotes} from './ListQuotes';
+
+//EDITQUOTEFORM
+export {default as EditQuoteForm} from './EditQuoteForm';
+
 //HEROSLIDER
 export {default as HeroSlider} from './HeroSlider';
 

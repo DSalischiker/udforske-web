@@ -32,21 +32,22 @@ const Nav = ({ children }) => {
             <a target='_blank'>instagram</a>
           </Link>
         </li>
+        <div className='separador'></div>
         {!auth.user ? (
           <>
             <li>
               <Link href="/login">
-                <a>login_</a>
+                <a>login</a>
               </Link>
             </li>
             <li>
               <Link href="signup">
-                <a>signup_</a>
+                <a>signup</a>
               </Link>
             </li>
           </>
-        ): <><li><Link href="/dashboard"><a>dashboard_</a></Link></li>
-        <li><a onClick={() => auth.logout()}>logout_</a></li></>}
+        ): <><li><Link href="/dashboard"><a>dashboard</a></Link></li>
+        <li><a onClick={() => auth.logout()}>logout</a></li></>}
         <img src='iso_blanco.svg'/>
       </NavContainer>
     </>

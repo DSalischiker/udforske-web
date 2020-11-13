@@ -3,13 +3,13 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import axios from 'axios';
 import { Container } from './styled'
 
-const QuotesForm = ({userId}) => {
+const EditQuoteForm = ({values, handleEditFormClose}) => {
+    const {id, text, author} = values
     const [message, setMessage] = useState('');
     return (
         <Container>
-            <h2>Crear Quote</h2>
             <Formik
-                initialValues={{ text: '', author: ''}}
+                initialValues={{ text, author }}
                 validate={values => {
                     const errors = {};
                     if (!values.text) {
@@ -18,17 +18,16 @@ const QuotesForm = ({userId}) => {
                     if (!values.author) {
                         errors.author = 'Requerido';
                     }
-
                     return errors;
                 }}
                 onSubmit={
-
                     async (values, { setSubmitting }) => {
                         try {
-                            const res = await axios.post('/api/quotes/create', {...values})
+                            const res = await axios.post('/api/quotes/edit', {...values, id})
                             const data = await res.data
                             setSubmitting(false);
-                            setMessage(`Post creado, thanks ${data.text} (${res.status})`)
+                            setMessage(`Quote edited, ${data.text} (${res.status})`)
+                            handleEditFormClose()
                         } catch (error) {
                             if (error.response) {
                                 console.log(error.response.data);
@@ -47,14 +46,13 @@ const QuotesForm = ({userId}) => {
                 {({ isSubmitting }) => (
                     <Form>
                         <div className="input_row">
-                            <Field type="text" name="text" placeholder="Cita" />
+                            <Field type="text" name="text" placeholder="Contenido" />
                             <ErrorMessage name="text" component="div" />
                         </div>
                         <div className="input_row">
                             <Field type="text" name="author" placeholder="Autore" />
                             <ErrorMessage name="author" component="div" />
                         </div>
-
                         <button type="submit" disabled={isSubmitting}>
                             Enviar
                         </button>
@@ -66,4 +64,4 @@ const QuotesForm = ({userId}) => {
     )
 }
 
-export default QuotesForm;
+export default EditQuoteForm;

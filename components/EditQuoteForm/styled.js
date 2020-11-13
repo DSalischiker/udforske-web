@@ -12,9 +12,7 @@ export const Container = styled.div`
   }
   margin-top: 40px;
   width: 100%;
-  h2 {
-    margin-bottom: 1em;
-  }
+
   .error_message {
     padding: 20px;
     color: #ff0000;
@@ -50,7 +48,7 @@ export const Container = styled.div`
     color: #222222;
     background-color: white;
     margin: 0 auto;
-    :hover{
+    :hover {
       background-color: #222222;
       color: white;
     }

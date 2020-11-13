@@ -1,15 +1,20 @@
 import { useAuth } from "lib/useUser";
-import {useProtected} from 'lib/useProtected';
-import {QuotesForm} from 'components';
+import { useProtected } from "lib/useProtected";
+import { QuotesForm, ListQuotes } from "components";
+import { Container } from './styled'
 const Dashboard = () => {
   const auth = useProtected();
   if (!auth.user) return null;
   return (
-    <div>
+    <Container>
       <h1>Dashboard_</h1>
-      <QuotesForm />
-      {auth.user.email }
-    </div>
+      <p>{auth.user.email}</p>
+      <section className='form'>
+        <QuotesForm />
+        <ListQuotes/>
+      </section>
+
+    </Container>
   );
 };
 
