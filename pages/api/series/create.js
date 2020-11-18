@@ -2,15 +2,26 @@
 import { db } from "lib/firebase";
 
 export default async (req, res) => {
+
+/* - id (int)
+- pais {nombre, img}
+- nombre (string)
+- descripción (string)
+- fotos [ ]
+- coordenadas { }
+- nombre locacion (string)
+- nombre provincia locación (string) */
     const {
-        user_id, //string
-        id, //string
+        /* user_id, //string */
         title, //string
-        country, //{name, img}
+        countryName, //string
         desc, // string
         photos, //[]
-        coordinates, //{lat, lng}
+        lat, //{lat, lng}
+        lng,
         location, // {name, region}
+        region,
+        /* date, //string */
     } = req.body;
 
     return await db
@@ -18,14 +29,16 @@ export default async (req, res) => {
         .doc()
         .set(
             {
-                user_id,
-                id,
+                /* user_id, */
                 title,
-                country,
+                countryName,
                 desc,
                 photos,
-                coordinates,
-                location
+                lat,
+                lng,
+                location,
+                region,
+                /* date, */
             }
         )
         .then(() => {

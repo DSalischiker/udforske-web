@@ -13,6 +13,12 @@ export {default as LoginForm} from './LoginForm';
 //SIGNUPFORM
 export {default as SignupForm} from './SignupForm';
 
+//IMGFORM
+export {default as StepOne} from './StepOne';
+
+//SERIESFORM
+export {default as SeriesForm} from './SeriesForm';
+
 //QUOTESFORM
 export {default as QuotesForm} from './QuotesForm';
 

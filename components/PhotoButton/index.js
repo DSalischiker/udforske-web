@@ -1,10 +1,11 @@
 import { Container as PhotoButtonContainer } from "./styled";
 import Image from 'next/image';
-
+import { motion } from 'framer-motion';
 const PhotoButton = ({ src, title, href }) => {
   return (
     <>
-      <PhotoButtonContainer src={src} href={href}>
+      <PhotoButtonContainer src={src} href={href} whileHover={{ scale: 1.02 }}
+    whileTap={{ scale: 1 }}>
           {/* <img src={src}/> */}
           <Image
         src={src}

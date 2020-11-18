@@ -1,6 +1,6 @@
 import styled from "styled-components";
-
-const Container = styled.a`
+import { motion } from 'framer-motion';
+const Container = styled(motion.a)`
   width: 30%;
   max-height: 70px;
   text-decoration: none;

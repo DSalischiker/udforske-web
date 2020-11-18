@@ -11,6 +11,7 @@ export default async (req, res) => {
     photos, //[]
     coordinates, //{lat, lng}
     location, // {name, region}
+    date, //string
   } = req.body;
 
   return await db
@@ -23,7 +24,8 @@ export default async (req, res) => {
       desc,
       photos,
       coordinates,
-      location
+      location,
+      date
     })
     .then(() => {
       console.log("Firebase 4 - Post Edited");

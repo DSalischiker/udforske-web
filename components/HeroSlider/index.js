@@ -47,7 +47,7 @@ const HeroSlider = ({ children }) => {
         <ButtonNext>Next</ButtonNext>
       </CarouselProvider> */}
 
-      <AwesomeSlider>
+      <AwesomeSlider bullets={false}>
         <div data-src="/seriesitemprueba.jpg" alt="Recetas cruelty free" />
         <div data-src="/slider1.jpg" alt="Recetas cruelty free" />
       </AwesomeSlider>

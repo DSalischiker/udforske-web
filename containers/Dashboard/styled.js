@@ -8,6 +8,11 @@ margin: 40px auto 0 auto;
     margin: 0 auto;
 width:70%;
 }
-
+section::after {
+    content: "_";
+    font-size: 74px;
+    font-weight: 500;
+    margin: 2em 0;
+  }
 
 `;
