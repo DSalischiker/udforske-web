@@ -13,16 +13,15 @@ export default async (req, res) => {
 - nombre provincia locación (string) */
     const {
         /* user_id, //string */
+        id,
         title, //string
         countryName, //string
         desc, // string
         photos, //[]
         image,
-        lat, //{lat, lng}
-        lng,
+        coord, //{lat, lng}
         location, // {name, region}
-        region,
-        /* date, //string */
+        date, //string
     } = req.body;
 
     return await db
@@ -31,16 +30,15 @@ export default async (req, res) => {
         .set(
             {
                 /* user_id, */
+                id,
                 title,
                 countryName,
                 desc,
                 photos,
                 image,
-                lat,
-                lng,
+                coord,
                 location,
-                region,
-                /* date, */
+                date,
             }
         )
         .then(() => {

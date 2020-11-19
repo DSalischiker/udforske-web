@@ -3,14 +3,16 @@ import { db } from "lib/firebase";
 
 export default async (req, res) => {
   const {
-    user_id, //string
     id, //string
     title, //string
-    country, //{name, img}
+    countryName, //{name, img}
     desc, // string
     photos, //[]
-    coordinates, //{lat, lng}
+    image,
+    lat, //{lat, lng}
+    lng,
     location, // {name, region}
+    region,
     date, //string
   } = req.body;
 
@@ -18,13 +20,15 @@ export default async (req, res) => {
     .collection("posts")
     .doc(id)
     .set({
-      user_id,
       title,
-      country,
+      countryName,
       desc,
       photos,
-      coordinates,
+      image,
+      lat,
+      lng,
       location,
+      region,
       date
     })
     .then(() => {

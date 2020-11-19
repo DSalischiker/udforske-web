@@ -1,17 +1,18 @@
 import { Container as SeriesDataContainer } from "./styled";
 
-const SeriesData = ({ place, province, country, description, date }) => {
+const SeriesData = ({ place, region, countryName, countryFlag, description, date }) => {
+
   return (
     <>
       <SeriesDataContainer>
         <div className="flex-row header">
-          <div className="flex-column">
+          <div className="flex-column title">
             <h1>{place}</h1>
-            <h3>{province}</h3>
+            <h3>{region}</h3>
           </div>
-          <div className="flex-column">
-            <img src={country.img} alt={country.name} />
-            <h3>{country.name}</h3>
+          <div className="flex-column country">
+            <img src={countryFlag} alt={countryName} />
+            <h3>{countryName}</h3>
           </div>
         </div>
         <p>{description}</p>

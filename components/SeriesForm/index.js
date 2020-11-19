@@ -9,6 +9,7 @@ const SeriesForm = (props) => {
   const allInputs = { imgUrl: "" };
   const [imageAsFile, setImageAsFile] = useState("");
   const [imageAsUrl, setImageAsUrl] = useState(allInputs);
+  const [dateSelected, setDate] = useState();
 
   console.log(imageAsFile);
   const handleImageAsFile = (e) => {
@@ -57,6 +58,11 @@ const SeriesForm = (props) => {
   };
   console.log("url", imageAsUrl);
 
+  const handleDateChange = (e) => {
+    const dateFromInput = e.target.value;
+    setDate(dateFromInput);
+    console.log(dateFromInput);
+  }
   return (
     <Container>
       <h2>Crear Serie</h2>
@@ -79,7 +85,7 @@ const SeriesForm = (props) => {
           lng: "",
           location: "",
           region: "",
-          /* date: "", */
+          date: "2020-11-16",
         }}
         validate={(values) => {
           const errors = {};
@@ -108,9 +114,9 @@ const SeriesForm = (props) => {
           if (!values.region) {
             errors.region = "Requerido";
           }
-          /* if (!values.date) {
+          if (!values.date) {
             errors.date = "Requerido";
-          } */
+          }
 
           return errors;
         }}
@@ -118,7 +124,14 @@ const SeriesForm = (props) => {
 
           try {
             const res = await axios.post("/api/series/create", {
-              ...values, image: imageAsUrl /* , user_id: userId  */,
+              title: values.title,
+              countryName: values.countryName,
+              photos: values.photos,
+              image: imageAsUrl /* , user_id: userId  */,
+              desc: values.desc,
+              coord: {lat: values.lat,lng:values.lng},
+              location: {name: values.location, region: values.region},
+              date: dateSelected,
             });
             const data = await res.data;
             setSubmitting(false);
@@ -155,7 +168,7 @@ const SeriesForm = (props) => {
               </div>
             </div>
             <div className="input_row">
-              <Field type="text" name="desc" placeholder="Descripción" />
+              <Field as="textarea" type="text" name="desc" placeholder="Descripción" />
               <ErrorMessage name="desc" component="div" />
             </div>
             <div className="input_row">
@@ -184,16 +197,16 @@ const SeriesForm = (props) => {
                 <Field type="text" name="region" placeholder="Región" />
                 <ErrorMessage name="region" component="div" />
               </div>
-              {/* <h4>Fecha</h4>
+              <h4>Fecha</h4>
               <div className="input_row">
                 <Field
                   type="date"
                   name="date"
-                  value="2020-11-16"
                   placeholder="Fecha"
+                  onChange={handleDateChange}
                 />
                 <ErrorMessage name="date" component="div" />
-              </div> */}
+              </div>
             </div>
 
             <button type="submit" disabled={isSubmitting}>

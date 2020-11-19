@@ -1,7 +1,30 @@
 import { Container } from "./styled";
 import { SeriesData } from "components";
+import { useState, useEffect } from "react";
+import { db } from "lib/firebase";
+import Link from "next/link";
+import axios from "axios";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
-const Serie = () => {
+const Serie = ({props}) => {
+  console.log(props);
+  const [serie, setSerie] = useState({});
+  /* useEffect(() => {
+    db.collection("series")
+      .where("id", "==", key)
+      .onSnapshot((snap) => {
+        const serieDB = snap.docs.map((doc) => ({
+          id: doc.id,
+
+          ...doc.data(),
+        }));
+        setSerie(serieDB);
+        console.log("serie", seriesDB);
+      });
+    // return (() => {
+    //     //unsubscribe the listener here
+    //     dbCall.unsubscribe()
+    // })
+  }, {}); */
   return (
     <Container>
       <section>
@@ -9,24 +32,26 @@ const Serie = () => {
         <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}>
           <Masonry gutter="20px">
             {/* MAP DE IMÁGENES */}
-            <img className="Horizontal" src="/seriesitemprueba.jpg" />
+            <img src={props.image} alt={`img${props.id}`}/>
+            {/* <img className="Horizontal" src="/seriesitemprueba.jpg" />
             <img className="Vertical" src="/seriesitemprueba1.png" />
             <img className="Vertical" src="/seriesitemprueba1.png" />
             <img className="Horizontal" src="/seriesitemprueba.jpg" />
             <img className="Horizontal" src="/seriesitemprueba.jpg" />
             <img className="Vertical" src="/seriesitemprueba1.png" />
-            <img className="Horizontal" src="/seriesitemprueba.jpg" />
+            <img className="Horizontal" src="/seriesitemprueba.jpg" /> */}
           </Masonry>
         </ResponsiveMasonry>
         {/* </div> */}
       </section>
       <section>
         <SeriesData
-          place="Desierto de Atacama"
-          province="Región de Antofagasta"
-          country={{ name: "Chile", img: "/chile.svg" }}
-          description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
-          date="Enero 2019."
+          place={props.location.name}
+          region={props.location.region}
+          countryName={props.countryObj.name}
+          countryFlag={props.countryObj.flag}
+          description={props.desc}
+          date={props.date}
         />
       </section>
     </Container>
