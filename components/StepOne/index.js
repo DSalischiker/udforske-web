@@ -3,7 +3,6 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import axios from "axios";
 import { Container } from "./styled";
 import { storage } from "lib/firebase";
-import StepWizard from "react-step-wizard";
 
 const StepOne = (props) => {
   const allInputs = { imgUrl: "" };
@@ -57,9 +56,6 @@ const StepOne = (props) => {
   return (
     <Container>
       <h2>Crear Serie</h2>
-      <p>Step {props.currentStep}</p>
-      <p>Total Steps: {props.totalSteps}</p>
-
       <div>
         <form onSubmit={handleFireBaseUpload}>
           <input
@@ -72,14 +68,7 @@ const StepOne = (props) => {
         </form>
         <img src={imageAsUrl.imgUrl} alt="image tag" />
       </div>
-      <div className='step-buttons'>
-      <p>
-        <button onClick={props.previousStep}>Previous Step</button>
-      </p>
-      <p>
-        <button onClick={props.nextStep}>Next Step</button>
-      </p>
-      </div>
+
       {/* <p>{message}</p> */}
     </Container>
   );

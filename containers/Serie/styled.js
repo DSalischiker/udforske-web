@@ -15,6 +15,9 @@ const Container = styled.div`
     grid-template-columns: repeat(auto-fill, minmax(45%, 1fr));
     grid-gap: 2em;
   }
+  .masonry{
+    /* max-width: 80vw !important; */
+  }
   .Vertical {
     width:50%;
   }

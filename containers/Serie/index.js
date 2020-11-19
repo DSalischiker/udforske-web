@@ -1,15 +1,24 @@
 import { Container } from "./styled";
-import {SeriesData} from 'components';
+import { SeriesData } from "components";
+import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 const Serie = () => {
   return (
     <Container>
       <section>
-        {/* MAP DE IMÁGENES */}
-        <div className='Grid'>
-          <img className='Horizontal' src='/seriesitemprueba.jpg'/>
-        <img className='Vertical' src='/seriesitemprueba1.png'/>
-        <img className='Vertical' src='/seriesitemprueba1.png'/>
-        </div>
+        {/* <div className='masonry'> */}
+        <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}>
+          <Masonry gutter="20px">
+            {/* MAP DE IMÁGENES */}
+            <img className="Horizontal" src="/seriesitemprueba.jpg" />
+            <img className="Vertical" src="/seriesitemprueba1.png" />
+            <img className="Vertical" src="/seriesitemprueba1.png" />
+            <img className="Horizontal" src="/seriesitemprueba.jpg" />
+            <img className="Horizontal" src="/seriesitemprueba.jpg" />
+            <img className="Vertical" src="/seriesitemprueba1.png" />
+            <img className="Horizontal" src="/seriesitemprueba.jpg" />
+          </Masonry>
+        </ResponsiveMasonry>
+        {/* </div> */}
       </section>
       <section>
         <SeriesData

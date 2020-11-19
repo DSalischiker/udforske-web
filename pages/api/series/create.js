@@ -17,6 +17,7 @@ export default async (req, res) => {
         countryName, //string
         desc, // string
         photos, //[]
+        image,
         lat, //{lat, lng}
         lng,
         location, // {name, region}
@@ -34,6 +35,7 @@ export default async (req, res) => {
                 countryName,
                 desc,
                 photos,
+                image,
                 lat,
                 lng,
                 location,
