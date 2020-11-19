@@ -14,8 +14,8 @@ const HeroSlider = ({ children }) => {
       <AutoplaySlider play={true}
     cancelOnInteraction={false} // should stop playing on user interaction
     interval={5000} bullets={false}>
-        <div data-src="/seriesitemprueba.jpg" alt="Recetas cruelty free" />
-        <div data-src="/slider1.jpg" alt="Recetas cruelty free" />
+        <div data-src="/seriesitemprueba.jpg" alt="mendoza" />
+        <div data-src="/slider1.jpg" alt="atacama" />
       </AutoplaySlider>
     </Container>
   );
