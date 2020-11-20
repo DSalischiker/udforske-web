@@ -204,7 +204,7 @@ const SeriesForm = (props) => {
             <div>
               <h4>Locación</h4>
               <GooglePlacesAutocomplete
-                apiKey="AIzaSyA2f8qUsCGsxRh_i9j4XW3HwWAtBmnnWs4"
+                apiKey={process.env.NEXT_PUBLIC_GOOGLE_API_KEY}
                 selectProps={{
                   place,
                   onChange: handlePlaceChange,
