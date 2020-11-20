@@ -13,30 +13,38 @@ export default async (req, res) => {
 - nombre provincia locación (string) */
     const {
         /* user_id, //string */
-        id,
+        /* id, */
         title, //string
         countryName, //string
         desc, // string
-        photos, //[]
+        /* photos, //[] */
         image,
-        coord, //{lat, lng}
-        location, // {name, region}
+        location, // {name, region, lat, lng}
         date, //string
     } = req.body;
-
+    console.log('SET',{
+        /* user_id, */
+        /* id, */
+        title,
+        countryName,
+        desc,
+        /* photos, */
+        image,
+        location,
+        date,
+    })
     return await db
         .collection("series")
         .doc()
         .set(
             {
                 /* user_id, */
-                id,
+                /* id, */
                 title,
                 countryName,
                 desc,
-                photos,
+                /* photos, */
                 image,
-                coord,
                 location,
                 date,
             }

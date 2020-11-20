@@ -8,23 +8,7 @@ import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 const Serie = ({props}) => {
   console.log(props);
   const [serie, setSerie] = useState({});
-  /* useEffect(() => {
-    db.collection("series")
-      .where("id", "==", key)
-      .onSnapshot((snap) => {
-        const serieDB = snap.docs.map((doc) => ({
-          id: doc.id,
 
-          ...doc.data(),
-        }));
-        setSerie(serieDB);
-        console.log("serie", seriesDB);
-      });
-    // return (() => {
-    //     //unsubscribe the listener here
-    //     dbCall.unsubscribe()
-    // })
-  }, {}); */
   return (
     <Container>
       <section>

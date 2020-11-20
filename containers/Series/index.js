@@ -39,7 +39,7 @@ const Series = () => {
                   key={serie.id}
                   className="Item"
                   href={`/series/${serie.id}`}
-                  src={serie.image.imgUrl}
+                  src={serie.image}
                   name={serie.title}
                 />
               );

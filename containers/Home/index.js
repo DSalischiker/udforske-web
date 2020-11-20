@@ -44,6 +44,16 @@ Una forma de registrar ese proceso o esa búsqueda eterna de lo que queremos hac
             />
           </div>
         </section>
+        <section>
+          <iframe
+            src="https://open.spotify.com/embed/playlist/5qTogUGumSAocuvB5N5JqG"
+            width="300"
+            height="380"
+            frameborder="0"
+            allowtransparency="true"
+            allow="encrypted-media"
+          ></iframe>
+        </section>
       </div>
     </Container>
   );

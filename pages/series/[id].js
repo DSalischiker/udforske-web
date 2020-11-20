@@ -22,8 +22,7 @@ export const getServerSideProps = async ({ query }) => {
         title: result.data().title,
         countryName: result.data().countryName,
         desc: result.data().desc,
-        image: result.data().image.imgUrl,
-        coord: result.data().coord,
+        image: result.data().image,
         location: result.data().location,
         date: result.data().date,
       };
@@ -46,7 +45,6 @@ export const getServerSideProps = async ({ query }) => {
       countryName: serieObj.countryName,
       desc: serieObj.desc,
       image: serieObj.image,
-      coord: serieObj.coord,
       location: serieObj.location,
       date: serieObj.date,
       countryObj: countryObj,

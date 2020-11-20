@@ -27,7 +27,7 @@ img{
     width: 4em;
 }
 .country{
-    alig-items: center;
+    align-items: center;
     padding: 0.5em;
     background-color: #222222;
     color: white;
