@@ -1,6 +1,6 @@
 import { useAuth } from "lib/useUser";
 import { useProtected } from "lib/useProtected";
-import { QuotesForm, ListQuotes, SeriesForm } from "components";
+import { QuotesForm, ListQuotes, SeriesForm, SliderForm, ListSlider } from "components";
 import { Container } from "./styled";
 const Dashboard = () => {
   const auth = useProtected();
@@ -9,6 +9,10 @@ const Dashboard = () => {
     <Container>
       <h1>Dashboard_</h1>
       <p>{auth.user.email}</p>
+      <section className="form">
+        <SliderForm/>
+        <ListSlider/>
+      </section>
       <section className="form">
         <QuotesForm />
         <ListQuotes />

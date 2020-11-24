@@ -1,6 +1,26 @@
 import styled from "styled-components";
 
 const Container = styled.div`
+@media(max-width: 1000px){
+  div.Index-Container {
+    margin: 1em auto 0 auto !important;
+    width: 100% !important;
+    display: flex;
+    flex-direction: column;
+  }
+  div.PhotoButtons-Container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 75px auto 0 auto;
+    width: 100% !important;
+  }
+  section{
+    width: 90%;
+    margin: 0 auto;
+  }
+}
   /* max-width: 100% !important;
   margin: 0;
   padding: 0; */
@@ -27,6 +47,14 @@ const Container = styled.div`
     margin-top: 75px;
     width: 1200px;
     max-width: 1200px;
+  }
+  .spotify{
+    display: flex;
+    flex-direction: column;
+  }
+  iframe{
+    width: 60%;
+    margin: 2em auto 0 auto;
   }
 `;
 const Img = styled.img`

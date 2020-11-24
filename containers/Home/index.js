@@ -2,6 +2,7 @@ import { HeroSlider, Bio, PhotoButton } from "components";
 import { Container, Img } from "./styled";
 import Image from "next/image";
 const Home = () => {
+
   return (
     <Container>
       <div className="Hero-Container">
@@ -44,7 +45,7 @@ Una forma de registrar ese proceso o esa búsqueda eterna de lo que queremos hac
             />
           </div>
         </section>
-        <section>
+        <section className='spotify'>
           <iframe
             src="https://open.spotify.com/embed/playlist/5qTogUGumSAocuvB5N5JqG"
             width="300"

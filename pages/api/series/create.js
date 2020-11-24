@@ -17,8 +17,7 @@ export default async (req, res) => {
         title, //string
         countryName, //string
         desc, // string
-        /* photos, //[] */
-        image,
+        photos, //[]
         location, // {name, region, lat, lng}
         date, //string
     } = req.body;
@@ -28,8 +27,7 @@ export default async (req, res) => {
         title,
         countryName,
         desc,
-        /* photos, */
-        image,
+        photos,
         location,
         date,
     })
@@ -43,8 +41,7 @@ export default async (req, res) => {
                 title,
                 countryName,
                 desc,
-                /* photos, */
-                image,
+                photos,
                 location,
                 date,
             }

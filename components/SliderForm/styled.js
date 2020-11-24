@@ -1,26 +1,6 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-.flex-row{
-  display:flex;
-  width: 100%;
-  justify-content: space-between;
-    align-items: center;
-    align-self: center;
-    margin-bottom: 0.6em;
-}
-
-.flex-row-item{
-  width:48% !important;
-
-}
-
-.flex-row-item-1{
-  width:68%;
-}
-.flex-row-item-2{
-  width:28%;
-}
   .input_row {
     position: relative;
   }

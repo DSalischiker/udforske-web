@@ -1,4 +1,6 @@
 import React from "react";
+import { useState, useEffect } from "react";
+import { db } from "lib/firebase";
 /* import { Container as SliderContainer } from "./styled"; */
 import Image from "next/image";
 import { Container } from "./styled";
@@ -9,13 +11,34 @@ import 'react-awesome-slider/dist/styles.css';
 
 const HeroSlider = ({ children }) => {
   const AutoplaySlider = withAutoplay(AwesomeSlider);
+  const [slider, setSlider] = useState([]);
+  useEffect(() => {
+    db.collection("slider")
+      /* .where("id", "==", id) */
+      .onSnapshot((snap) => {
+        const sliderDB = snap.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+        setSlider(sliderDB);
+        console.log("slider", sliderDB);
+      });
+    // return (() => {
+    //     //unsubscribe the listener here
+    //     dbCall.unsubscribe()
+    // })
+  }, []);
   return (
     <Container>
       <AutoplaySlider play={true}
     cancelOnInteraction={false} // should stop playing on user interaction
     interval={5000} bullets={false}>
-        <div data-src="/seriesitemprueba.jpg" alt="mendoza" />
-        <div data-src="/slider1.jpg" alt="atacama" />
+      {/* Map de imgs */}
+        {slider.length && slider.map((slide) => {
+          return(
+            <div data-src={slide.url} alt={slide.id} />
+          )
+        })}
       </AutoplaySlider>
     </Container>
   );

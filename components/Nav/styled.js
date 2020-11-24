@@ -1,6 +1,19 @@
 import styled from "styled-components";
 
 const Container = styled.ul`
+@media (max-width: 1000px){
+    .ico{
+        display:none;
+    }
+    .separador{
+        display:none;
+    }
+    margin: 1em auto;
+    padding: 0 0.5em;
+    gap:1em;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 a{
     opacity: 0.7;
     color: white;

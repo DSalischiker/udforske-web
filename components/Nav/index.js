@@ -28,11 +28,11 @@ const Nav = ({ children }) => {
           </Link>
         </li>
         <li>
-          <Link href='https://instagram.com/udforske_'>
-            <a target='_blank'>instagram</a>
+          <Link href="https://instagram.com/udforske_">
+            <a target="_blank">instagram</a>
           </Link>
         </li>
-        <div className='separador'></div>
+        <div className="separador"></div>
         {!auth.user ? (
           <>
             <li>
@@ -46,9 +46,19 @@ const Nav = ({ children }) => {
               </Link>
             </li>
           </>
-        ): <><li><Link href="/dashboard"><a>dashboard</a></Link></li>
-        <li><a onClick={() => auth.logout()}>logout</a></li></>}
-        <img src='iso_blanco.svg'/>
+        ) : (
+          <>
+            <li>
+              <Link href="/dashboard">
+                <a>dashboard</a>
+              </Link>
+            </li>
+            <li>
+              <a onClick={() => auth.logout()}>logout</a>
+            </li>
+          </>
+        )}
+        <img className='ico' src="iso_blanco.svg" />
       </NavContainer>
     </>
   );

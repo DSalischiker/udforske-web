@@ -13,6 +13,12 @@ export {default as LoginForm} from './LoginForm';
 //SIGNUPFORM
 export {default as SignupForm} from './SignupForm';
 
+//SLIDERFORM
+export {default as SliderForm} from './SliderForm';
+
+//LISTSLIDER
+export {default as ListSlider} from './ListSlider';
+
 //IMGFORM
 export {default as StepOne} from './StepOne';
 

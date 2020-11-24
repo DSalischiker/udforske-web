@@ -1,6 +1,11 @@
 import styled from "styled-components";
 import { motion } from 'framer-motion';
 const Container = styled(motion.a)`
+@media (max-width: 1000px){
+  width: 80% !important;
+  max-height: none;
+  margin-bottom: 3em;
+}
   width: 30%;
   max-height: 70px;
   text-decoration: none;
