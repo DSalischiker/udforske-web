@@ -10,39 +10,29 @@ const Container = styled.div`
   width: 1200px;
   max-width: 1200px !important;
   margin: 100px auto;
-
-  @media (min-width: 400px){
-    .Grid{
-      display:grid;
-      grid-template-columns: 1fr;
-    }
-  }
-  @media (min-width: 700px) {
-    .Grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
-  @media (min-width: 900px) {
-    .Grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-    }
-    .Item:nth-child(3) {
-      grid-row: span 2;
-    }
-    .Item:nth-child(4) {
-      grid-column: span 2;
-      grid-row: span 2;
-    }
-  }
   .Grid {
     width: 100%;
-    /* display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-gap: 2em;
   }
+  @media (max-width: 1200px){
+    margin-top: 10em;
+    width: 85%;
+    .Grid{
+      grid-template-columns: 1fr 1fr !important;
+    }
+  }
+  @media (max-width: 736px){
+    margin-top: 14em;
+    width: 85%;
+    .Grid{
+      width: 100% !important;
+      grid-template-columns: 1fr !important;
+    }
+  }
+
+
   .Item {
     background-color: green;
     height: fit-content;

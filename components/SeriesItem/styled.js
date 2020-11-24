@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 const Container = styled.div`
   width: 100%;
+  height: auto;
   .Content {
     position: relative;
   }
@@ -17,7 +18,7 @@ const Container = styled.div`
     bottom: 0;
     left: 0;
     right: 0;
-    height: 100%;
+    height: auto;
     width: 100%;
     opacity: 0;
     transition: 0.5s ease;

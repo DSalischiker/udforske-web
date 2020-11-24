@@ -25,16 +25,19 @@ const SliderForm = (props) => {
       <Formik
         initialValues={{
           /* photo: "", */
+          alt: '',
         }}
         validate={(values) => {
           const errors = {};
           /* if (!values.photo) {
             errors.photo = "Requerido";
           } */
-
+          if (!values.alt) {
+            errors.alt = "Requerido";
+          }
           return errors;
         }}
-        onSubmit={async (/* { setSubmitting } */) => {
+        onSubmit={async (values, { setSubmitting }) => {
           try {
             //Upload IMG a Firebase
             const fileInstance = new File([imageAsFile], imageAsFile.name);
@@ -55,12 +58,13 @@ const SliderForm = (props) => {
 
             const res = await axios.post("/api/slider/create", {
               url: photoUrl,
+              alt: values.alt,
             });
 
             //POST A FIRESTORE
             const data = await res.data;
             /* setSubmitting(false); */
-            setMessage(`Post creado, thanks ${data.url} (${res.status})`);
+            setMessage(`Post creado, thanks ${data.alt} (${res.status})`);
           } catch (error) {
             if (error.response) {
               console.log(error.response.data);
@@ -86,7 +90,14 @@ const SliderForm = (props) => {
               />
               <ErrorMessage name="photo" component="div" />
             </div>
-
+            <div className="input_row">
+              <Field
+                type="text"
+                name="alt"
+                placeholder="Texto alternativo"
+              />
+              <ErrorMessage name="alt" component="div" />
+            </div>
             <button type="submit" disabled={isSubmitting}>
               Enviar
             </button>

@@ -1,12 +1,22 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from "styled-components";
 const GlobalStyle = createGlobalStyle`
 html,
 body {
+  @font-face {
+    font-family: 'Archivo', sans-serif;
+    src: url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: auto;
+  }
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+  font-family: Open Sans, Archivo, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
     sans-serif;
+    h1, h2, h3, h4, h5, h6{
+      font-family: 'Archivo', sans-serif;
+    }
 }
 
 .inner {max-width:1200px; margin: 0 auto;}

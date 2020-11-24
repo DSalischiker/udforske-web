@@ -28,7 +28,11 @@ const Container = styled.div`
   align-self: center;
 
   .text {
+    p{
+      font-family: 'Open Sans', sans-serif;
+    }
     h2 {
+
       font-size: 48px;
       margin-bottom: 0.5em;
     }

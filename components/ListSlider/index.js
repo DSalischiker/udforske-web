@@ -49,10 +49,11 @@ const ListSlider = ({ id }) => {
         <h2>Lista de Slides</h2>
       <ul>
         {slides &&
-          slides.map(({ id, url }) => (
+          slides.map(({ id, url, alt }) => (
             <li key={id}>
               <div className="flex-container">
                     <img src={url} alt={`img-${id}`}/>
+                    <span>Alt: {alt}</span>
                 <div className="buttons">
                   <button onClick={() => handleDelete(id)}>Delete</button>
                 </div>

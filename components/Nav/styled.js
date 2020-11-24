@@ -15,6 +15,7 @@ const Container = styled.ul`
     justify-content: center;
 }
 a{
+    font-family: 'Open Sans', sans-serif;
     opacity: 0.7;
     color: white;
     text-decoration:none;

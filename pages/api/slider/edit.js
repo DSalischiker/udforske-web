@@ -5,6 +5,7 @@ export default async (req, res) => {
   const {
     id, //string
     url,
+    alt,
   } = req.body;
 
   return await db
@@ -12,10 +13,11 @@ export default async (req, res) => {
     .doc(id)
     .set({
       url,
+      alt,
     })
     .then(() => {
       console.log("Firebase 4 - Post Edited");
-      res.status(200).json({ message: "Post Creado", url });
+      res.status(200).json({ message: "Post Creado", alt });
       res.end();
     })
     .catch((error) => console.log("Hubo un error creando el post", error));

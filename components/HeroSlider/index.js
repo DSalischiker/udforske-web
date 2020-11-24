@@ -36,7 +36,7 @@ const HeroSlider = ({ children }) => {
       {/* Map de imgs */}
         {slider.length && slider.map((slide) => {
           return(
-            <div data-src={slide.url} alt={slide.id} />
+            <div data-src={slide.url} alt={slide.alt} />
           )
         })}
       </AutoplaySlider>

@@ -105,13 +105,54 @@ const SeriesForm = (props) => {
             //Upload múltiples imágenes
             const promises = [];
             files.forEach((file) => {
+
               const uploadTask = firebase
                 .storage()
                 .ref()
                 .child(`photos/${values.title}/${file.name}`)
                 .put(file);
-              promises.push(uploadTask);
-              uploadTask.on(
+
+                const promise = new Promise((resolve, reject) => {
+                  uploadTask.on(
+                    firebase.storage.TaskEvent.STATE_CHANGED,
+                    (snapshot) => {
+                      const progress =
+                        (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+                      if (snapshot.state === firebase.storage.TaskState.RUNNING) {
+                        console.log(`Progress: ${progress}%`);
+                      }
+                    },
+                    function(error) {
+                      reject(error);  // added this line
+                      alert(error);
+                    },
+                    async () => {
+                      const downloadURL = await uploadTask.snapshot.ref.getDownloadURL();
+                        //do something with the URL
+                      urlArray.push(downloadURL);
+                      console.log('urlArray:', urlArray);
+                      resolve();
+                    }
+                  );
+                  /* uploadTask.on(
+                   'state_changed',
+                   function(snapshot) {
+                     const progress = snapshot.bytesTransferred / snapshot.totalBytes * 100;
+                     console.log('Upload is ' + progress + '% done');
+                   },
+                   function(error) {
+                     reject(error);  // added this line
+                     alert(error);
+                   },
+                   function() {
+                     const downloadURL = uploadTask.snapshot.downloadURL;
+                     console.log(downloadURL);
+                     resolve();  // added this line
+                   }
+                 ); */
+               });
+              promises.push(promise);
+              /* uploadTask.on(
                 firebase.storage.TaskEvent.STATE_CHANGED,
                 (snapshot) => {
                   const progress =
@@ -127,7 +168,7 @@ const SeriesForm = (props) => {
                   urlArray.push(downloadURL);
                   console.log('urlArray:', urlArray);
                 }
-              );
+              ); */
 
             });
 
@@ -183,7 +224,7 @@ const SeriesForm = (props) => {
                 </div>
                 <div className='flex-row-item'>
               <GooglePlacesAutocomplete
-              className='input-places'
+              className='input-places input_row'
                 apiKey={process.env.NEXT_PUBLIC_GOOGLE_API_KEY}
                 selectProps={{
                   placeholder: 'Locación:',

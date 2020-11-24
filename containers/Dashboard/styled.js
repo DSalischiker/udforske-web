@@ -1,11 +1,13 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+
 @media (max-width: 1000px){
   width: 85%;
+  margin: 6em auto 0 auto;
 }
 max-width: 1200px;
-margin: 40px auto 0 auto;
+margin: 10em auto 0 auto;
 .form{
     margin: 0 auto;
 width:70%;

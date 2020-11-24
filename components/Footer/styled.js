@@ -15,6 +15,7 @@ const Container = styled.div`
       margin-top: 0 !important;
     }
     p {
+
       margin: 0 auto 2em auto !important;
     }
     img {
@@ -35,6 +36,7 @@ const Container = styled.div`
   align-items: center;
   /* border-top: 3px solid #d2e603; */
   p {
+    font-family: 'Open Sans', sans-serif;
     margin-right: 4em;
   }
   img {

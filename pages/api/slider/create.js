@@ -5,9 +5,11 @@ export default async (req, res) => {
 
     const {
         url,
+        alt,
     } = req.body;
     console.log('SET',{
         url,
+        alt,
     })
     return await db
         .collection("slider")
@@ -15,11 +17,12 @@ export default async (req, res) => {
         .set(
             {
                 url,
+                alt,
             }
         )
         .then(() => {
             console.log("Firebase 4 - Post Creado");
-            res.status(200).json({ message: 'Post Creado', url })
+            res.status(200).json({ message: 'Post Creado', alt })
             res.end();
         })
         .catch((error) =>

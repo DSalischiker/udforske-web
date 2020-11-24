@@ -6,4 +6,7 @@ const Container = styled.div`
   /* margin: 0 auto; */
 `;
 
-export { Container };
+const QuoteDiv = styled.div`
+`;
+
+export { Container, QuoteDiv };

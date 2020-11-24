@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
 const Container = styled.div`
+position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 2000;
 @media (max-width: 1000px){
     flex-direction: column;
     justify-content: center;
