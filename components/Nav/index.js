@@ -8,7 +8,7 @@ const Nav = ({ children }) => {
       <NavContainer>
         <li>
           <Link href="/">
-            <a>sur</a>
+            <a>home</a>
           </Link>
         </li>
         <li>
@@ -16,7 +16,7 @@ const Nav = ({ children }) => {
           <div className='tooltip'>
             <a>mapa</a>
             <span className="tooltiptext">Próximamente</span>
-          </div>
+            </div>
           {/* </Link> */}
         </li>
         <li>
@@ -29,7 +29,7 @@ const Nav = ({ children }) => {
           <div className='tooltip'>
             <a>tienda</a>
             <span className="tooltiptext">Próximamente</span>
-          </div>
+            </div>
           {/* </Link> */}
         </li>
         <li>
@@ -52,18 +52,18 @@ const Nav = ({ children }) => {
             </li>
           </>
         ) : (
-            <>
-              <li>
-                <Link href="/dashboard">
-                  <a>dashboard</a>
-                </Link>
-              </li>
-              <li>
-                <a onClick={() => auth.logout()}>logout</a>
-              </li>
-            </>
-          )}
-        <img className='ico' src="https://firebasestorage.googleapis.com/v0/b/udforske-f73ff.appspot.com/o/general%2Fiso_blanco.svg?alt=media&token=07614c99-6e7e-490e-947f-8bc5cf769db0" />
+          <>
+            <li>
+              <Link href="/dashboard">
+                <a>dashboard</a>
+              </Link>
+            </li>
+            <li>
+              <a onClick={() => auth.logout()}>logout</a>
+            </li>
+          </>
+        )}
+        <img className='ico' src="https://firebasestorage.googleapis.com/v0/b/udforske-f73ff.appspot.com/o/general%2Fiso_blanco.svg?alt=media&token=07614c99-6e7e-490e-947f-8bc5cf769db0"/>
       </NavContainer>
     </>
   );
