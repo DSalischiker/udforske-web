@@ -1,11 +1,11 @@
 import {SignupForm} from 'components';
-
+import {Container} from './styled';
 const Signup = () => {
     return(
-        <div>
+        <Container>
             <h1>Signup_</h1>
             <SignupForm/>
-        </div>
+        </Container>
     )
 }
 

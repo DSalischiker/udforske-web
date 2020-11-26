@@ -18,7 +18,6 @@ const ListQuotes = ({ id }) => {
           ...doc.data(),
         }));
         setQuotes(quotesDB);
-        console.log(quotesDB);
       });
     // return (() => {
     //     //unsubscribe the listener here

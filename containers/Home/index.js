@@ -14,7 +14,7 @@ const Home = () => {
         <section>
           <Bio
             className="Bio"
-            title="Bio"
+            title="Diego"
             text="Nacido y criado en Buenos Aires, más precisamente en el barrio de Villa Crespo. Soy estudiante de Tecnologías Multimediales, y me interesa explorar la cultura y el paisaje que me rodea, intentando aportar una mirada austral a esta civilización boreal. Soy aficionado a la astronomía y mi entrada a ese mundo y al de la fotografía se viene dando en paralelo hace unos tres años."
             src="./bio.png"
           />

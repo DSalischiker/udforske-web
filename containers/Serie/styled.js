@@ -10,7 +10,7 @@ const Container = styled.div`
   }
   width: 85%;
   max-width: 1200px !important;
-  margin: 100px auto 0 auto;
+  margin: 2em auto 0 auto;
   .series-title{
     font-size:36px;
     margin: 0 auto 1em auto;

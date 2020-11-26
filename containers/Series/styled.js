@@ -9,7 +9,7 @@ const Container = styled.div`
   }
   width: 1200px;
   max-width: 1200px !important;
-  margin: 100px auto 0 auto;
+  margin: 2em auto 0 auto;
   .Grid {
     width: 100%;
     display: grid;
@@ -17,14 +17,14 @@ const Container = styled.div`
     grid-gap: 2em;
   }
   @media (max-width: 1200px){
-    margin-top: 10em;
+    margin-top: 2em;
     width: 85%;
     .Grid{
       grid-template-columns: 1fr 1fr !important;
     }
   }
   @media (max-width: 736px){
-    margin-top: 14em;
+    margin-top: 2em;
     width: 85%;
     .Grid{
       width: 100% !important;

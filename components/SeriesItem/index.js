@@ -2,7 +2,6 @@ import { Container } from "./styled";
 import Image from "next/image";
 import Link from "next/link";
 const SeriesItem = ({ href, src, name, data }) => {
-  console.log("src: ",src);
   return (
     <Container>
       <Link href={href}>

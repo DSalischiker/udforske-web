@@ -29,6 +29,33 @@ display: flex;
 justify-content: space-between;
 align-items: center;
 margin-right: 2em;
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+    width: 100px;
+  top: 100%;
+  left: 50%;
+  margin-left: -50px; /* Use half of the width (120/2 = 60), to center the tooltip */
+  visibility: hidden;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+  font-size: 12px;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
 li{
     cursor: pointer;
     list-style-type: none;

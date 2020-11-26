@@ -16,7 +16,6 @@ const Series = () => {
           ...doc.data(),
         }));
         setSeries(seriesDB);
-        console.log("series", seriesDB);
       });
     // return (() => {
     //     //unsubscribe the listener here
@@ -30,9 +29,6 @@ const Series = () => {
           {/* ACÁ VA UN .MAP DE SERIES COLLECTION*/}
           {series.length ?
             series.map((serie) => {
-              {
-                console.log("estoy en map", serie);
-              }
               return (
                 <SeriesItem
                   key={serie.id}
@@ -42,7 +38,7 @@ const Series = () => {
                   name={serie.title}
                 />
               );
-            }): <h1 className='loading'>Loading...</h1>}
+            }): <h1 className='loading'>Cargando...</h1>}
         </div>
       </section>
     </Container>

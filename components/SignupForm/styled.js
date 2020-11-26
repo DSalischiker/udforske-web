@@ -10,6 +10,7 @@ export const Container = styled.div`
     right: 22px;
     color: #ff0000;
   }
+  margin: 0 auto;
   margin-top: 40px;
   width: 50%;
   .error_message {

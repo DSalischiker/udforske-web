@@ -7,11 +7,11 @@ const PhotoButton = ({ src, title, href }) => {
       <PhotoButtonContainer src={src} href={href} whileHover={{ scale: 1.02 }}
     whileTap={{ scale: 1 }}>
           {/* <img src={src}/> */}
-          <Image
+          <img
         src={src}
         alt="Foto de botón"
-        width={525}
-        height={351}
+        /* width={525}
+        height={351} */
       />
         <h1>{title}</h1>
       </PhotoButtonContainer>

@@ -84,7 +84,7 @@ const Serie = ({ props }) => {
             photos.map((photo) => {
               return <img src={photo} alt={`foto ${title}`} />;
             })}
-          <button type="button" onClick={() => SetIsOpen(true)}>
+          {/* <button type="button" onClick={() => SetIsOpen(true)}>
             {isOpen && (
               <Lightbox
                 mainSrc={photos[photoIndex]}
@@ -104,7 +104,7 @@ const Serie = ({ props }) => {
               />
             )}
             Open Lightbox
-          </button>
+          </button> */}
         </div>
         {/*
           <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}>

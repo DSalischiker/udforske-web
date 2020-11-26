@@ -1,6 +1,16 @@
 import styled from "styled-components";
 
 const Container = styled.div`
+@media(max-width: 768px){
+  flex-direction: column-reverse;
+  gap:1em;
+  justify-content: center;
+  align-items: center;
+  img{
+    margin-left: 0 !important;
+    flex: 1;
+  }
+}
   @media (max-width: 1000px) {
       width: 85% !important;
     .text {

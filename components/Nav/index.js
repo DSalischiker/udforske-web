@@ -3,7 +3,6 @@ import Link from "next/link";
 import { useAuth } from "lib/useUser";
 const Nav = ({ children }) => {
   const auth = useAuth();
-  console.log("MI USER ES", auth.user);
   return (
     <>
       <NavContainer>
@@ -13,9 +12,12 @@ const Nav = ({ children }) => {
           </Link>
         </li>
         <li>
-          <Link href="/mapa">
+          {/* <Link href="/mapa"> */}
+          <div className='tooltip'>
             <a>mapa</a>
-          </Link>
+            <span className="tooltiptext">Próximamente</span>
+            </div>
+          {/* </Link> */}
         </li>
         <li>
           <Link href="/series">
@@ -23,9 +25,12 @@ const Nav = ({ children }) => {
           </Link>
         </li>
         <li>
-          <Link href="/shop">
+          {/* <Link href="/shop"> */}
+          <div className='tooltip'>
             <a>tienda</a>
-          </Link>
+            <span className="tooltiptext">Próximamente</span>
+            </div>
+          {/* </Link> */}
         </li>
         <li>
           <Link href="https://instagram.com/udforske_">

@@ -9,7 +9,10 @@ function MyApp({ Component, pageProps }) {
   library.add(fab, faCoffee);
   return(
     <>
-    <Head />
+    <Head>
+      <title>Udforske_</title>
+      <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+    </Head>
       <GlobalStyle />
       <AuthProvider>
         <Layout>
