@@ -21,7 +21,7 @@ a{
     text-decoration:none;
 }
 a:hover{
-    color: white !important;
+    color: #d2e603 !important;
     opacity: 1;
 }
 width: fit-content;
