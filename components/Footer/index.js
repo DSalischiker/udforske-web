@@ -37,7 +37,7 @@ const Footer = ({ children }) => {
           <Link href="/">
             <a>
               <img
-                src="https://firebasestorage.googleapis.com/v0/b/udforske-f73ff.appspot.com/o/general%2Flogo_negro.svg?alt=media&token=70e95d1b-94d3-4a0e-85db-bb97127f506f"
+                src="https://firebasestorage.googleapis.com/v0/b/udforske-f73ff.appspot.com/o/general%2FLogo.png?alt=media&token=0d37e68c-57ee-49af-b94b-44b50aa89e07"
                 alt="logo"
               />
             </a>
