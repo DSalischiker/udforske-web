@@ -9,7 +9,7 @@ const Container = styled.div`
   }
   width: 1200px;
   max-width: 1200px !important;
-  margin: 100px auto;
+  margin: 100px auto 0 auto;
   .Grid {
     width: 100%;
     display: grid;

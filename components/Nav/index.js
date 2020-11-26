@@ -58,7 +58,7 @@ const Nav = ({ children }) => {
             </li>
           </>
         )}
-        <img className='ico' src="iso_blanco.svg" />
+        <img className='ico' src="https://firebasestorage.googleapis.com/v0/b/udforske-f73ff.appspot.com/o/general%2Fiso_blanco.svg?alt=media&token=07614c99-6e7e-490e-947f-8bc5cf769db0"/>
       </NavContainer>
     </>
   );

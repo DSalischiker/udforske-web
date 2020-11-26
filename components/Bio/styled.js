@@ -33,7 +33,7 @@ const Container = styled.div`
     }
     h2 {
 
-      font-size: 48px;
+      font-size: 36px;
       margin-bottom: 0.5em;
     }
     display: flex;

@@ -2,9 +2,9 @@ import styled from "styled-components";
 
 export const Container = styled.div`
 max-width: 100vw;
-max-height: /* calc(100vh - 75px) */ 100vh;
+max-height: calc(100vh - 75px);
 div{
-    max-height: /* calc(100vh - 75px) */ 100vh;
+    max-height: calc(100vh - 75px);
 }
 /* max-height: 500px; */
 .carousel-provider{
@@ -16,7 +16,7 @@ div{
     /* max-height: 500px; */
 }
 img{
-    max-height: /* calc(100vh - 75px) */ 100vh;
+    max-height: calc(100vh - 75px);
     /* object-fit: contain; */
     /* height: 80vh !important; */
     /* max-height: 500px; */

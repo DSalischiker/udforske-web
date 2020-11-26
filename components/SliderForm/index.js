@@ -64,7 +64,7 @@ const SliderForm = (props) => {
             //POST A FIRESTORE
             const data = await res.data;
             /* setSubmitting(false); */
-            setMessage(`Post creado, thanks ${data.alt} (${res.status})`);
+            setMessage(`Post creado - ${data.alt} (${res.status})`);
           } catch (error) {
             if (error.response) {
               console.log(error.response.data);
@@ -98,14 +98,16 @@ const SliderForm = (props) => {
               />
               <ErrorMessage name="alt" component="div" />
             </div>
+            <div className='btn-container'>
             <button type="submit" disabled={isSubmitting}>
               Enviar
             </button>
+            <p className='message'>{message}</p>
+            </div>
+
           </Form>
         )}
       </Formik>
-
-      <p>{message}</p>
     </Container>
   );
 };

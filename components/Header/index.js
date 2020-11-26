@@ -7,7 +7,7 @@ const Header = ({ children }) => {
       <HeaderContainer>
         <Link href='/'>
           <a>
-        <img src="/logo_blanco.svg" alt="logo" />
+        <img src="https://firebasestorage.googleapis.com/v0/b/udforske-f73ff.appspot.com/o/general%2Flogo_blanco.svg?alt=media&token=e44f52c2-da81-42f1-af74-7cd3d73d78c3" alt="logo" />
         </a>
         </Link>
         <Nav />

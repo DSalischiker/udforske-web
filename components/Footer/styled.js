@@ -49,7 +49,7 @@ const Container = styled.div`
     justify-content: center;
     align-items: center;
     img {
-      width: 4em;
+      width: 5em;
       margin: 0;
     }
     a {
@@ -59,6 +59,7 @@ const Container = styled.div`
     .redes {
       margin-top: 1em;
       display: flex;
+      gap: 0.5em;
       justify-content: space-around;
       width: 100%;
       .icon {
@@ -71,6 +72,9 @@ const Container = styled.div`
       .behance:hover {
         color: #053eff;
       }
+      .envelope:hover{
+        color: #d2e603;
+      }
     }
   }
   .legales {
@@ -79,6 +83,11 @@ const Container = styled.div`
     align-items: center;
     width: 100%;
     height: 200px;
+    a {
+      text-decoration: underline;
+  text-decoration-color: #d2e603;
+color: #222222;
+    }
   }
 `;
 

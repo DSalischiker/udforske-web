@@ -31,6 +31,7 @@ img{
     padding: 0.5em;
     background-color: #222222;
     color: white;
+    gap: 0.3em;
 }
 h1{font-size: 1.8em; font-weight: 700;}
 h3{font-size: 1em; font-weight: 700;}

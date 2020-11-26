@@ -13,7 +13,6 @@ const Series = () => {
       .onSnapshot((snap) => {
         const seriesDB = snap.docs.map((doc) => ({
           id: doc.id,
-
           ...doc.data(),
         }));
         setSeries(seriesDB);
@@ -39,7 +38,7 @@ const Series = () => {
                   key={serie.id}
                   className="Item"
                   href={`/series/${serie.id}`}
-                  src={serie.image}
+                  src={serie.photos[0]}
                   name={serie.title}
                 />
               );

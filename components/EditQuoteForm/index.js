@@ -53,13 +53,16 @@ const EditQuoteForm = ({values, handleEditFormClose}) => {
                             <Field type="text" name="author" placeholder="Autore" />
                             <ErrorMessage name="author" component="div" />
                         </div>
-                        <button type="submit" disabled={isSubmitting}>
-                            Enviar
-                        </button>
+                        <div className='btn-container'>
+            <button type="submit" disabled={isSubmitting}>
+              Enviar
+            </button>
+            <p className='message'>{message}</p>
+            </div>
                     </Form>
                 )}
             </Formik>
-            <p>{message}</p>
+
         </Container>
     )
 }

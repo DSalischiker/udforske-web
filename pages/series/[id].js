@@ -19,10 +19,11 @@ export const getServerSideProps = async ({ query }) => {
     .get()
     .then(async (result) => {
       serieObj = {
+        id: query.id,
         title: result.data().title,
         countryName: result.data().countryName,
         desc: result.data().desc,
-        image: result.data().image,
+        photos: result.data().photos,
         location: result.data().location,
         date: result.data().date,
       };
@@ -41,10 +42,11 @@ export const getServerSideProps = async ({ query }) => {
   return {
 
     props: {
+      id: serieObj.id,
       title: serieObj.title,
       countryName: serieObj.countryName,
       desc: serieObj.desc,
-      image: serieObj.image,
+      photos: serieObj.photos,
       location: serieObj.location,
       date: serieObj.date,
       countryObj: countryObj,

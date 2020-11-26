@@ -45,7 +45,7 @@ Una forma de registrar ese proceso o esa búsqueda eterna de lo que queremos hac
             />
           </div>
         </section>
-        <section className='spotify'>
+        {/* <section className='spotify'>
           <iframe
             src="https://open.spotify.com/embed/playlist/5qTogUGumSAocuvB5N5JqG"
             width="300"
@@ -54,7 +54,7 @@ Una forma de registrar ese proceso o esa búsqueda eterna de lo que queremos hac
             allowtransparency="true"
             allow="encrypted-media"
           ></iframe>
-        </section>
+        </section> */}
       </div>
     </Container>
   );

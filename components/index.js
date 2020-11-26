@@ -25,6 +25,12 @@ export {default as StepOne} from './StepOne';
 //SERIESFORM
 export {default as SeriesForm} from './SeriesForm';
 
+//EDITSERIESFORM
+export {default as EditSeriesForm} from './EditSeriesForm';
+
+//LISTSERIES
+export {default as ListSeries} from './ListSeries';
+
 //QUOTESFORM
 export {default as QuotesForm} from './QuotesForm';
 

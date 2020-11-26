@@ -44,10 +44,10 @@ export const Container = styled.div`
     border-radius: 0;
     text-transform: uppercase;
     padding: 20px 10px !important;
-    margin-top: 20px;
+    /* margin-top: 20px; */
     color: #222222;
     background-color: white;
-    margin: 0 auto;
+    /* margin: 0 auto; */
     :hover {
       background-color: #222222;
       color: white;
@@ -77,5 +77,16 @@ export const Container = styled.div`
   }
   label {
     font-size: 16px;
+  }
+  .btn-container{
+    display: flex;
+    gap: 1em;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .message{
+
+    color: #d2e603;
+    font-size:12px;
   }
 `;

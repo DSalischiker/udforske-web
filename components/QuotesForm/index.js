@@ -22,7 +22,6 @@ const QuotesForm = ({userId}) => {
                     return errors;
                 }}
                 onSubmit={
-
                     async (values, { setSubmitting }) => {
                         try {
                             const res = await axios.post('/api/quotes/create', {...values})
@@ -55,13 +54,15 @@ const QuotesForm = ({userId}) => {
                             <ErrorMessage name="author" component="div" />
                         </div>
 
-                        <button type="submit" disabled={isSubmitting}>
-                            Enviar
-                        </button>
+                        <div className='btn-container'>
+            <button type="submit" disabled={isSubmitting}>
+              Enviar
+            </button>
+            <p className='message'>{message}</p>
+            </div>
                     </Form>
                 )}
             </Formik>
-            <p>{message}</p>
         </Container>
     )
 }
