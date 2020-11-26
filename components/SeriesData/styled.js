@@ -1,6 +1,14 @@
 import styled from "styled-components";
 
 const Container = styled.div`
+@media (max-width: 768px){
+    .header{
+        flex-direction: column-reverse !important;
+    }
+    .country{
+        width: fit-content !important;
+    }
+}
 margin: 80px auto 0 auto;
 width: 70%;
 display: flex;

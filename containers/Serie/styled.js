@@ -32,7 +32,7 @@ const Container = styled.div`
     img{
       width:auto;
       max-height: 80vh;
-      max-width: 1000px;
+      max-width: 90%;
     }
   }
   .Grid {
