@@ -27,6 +27,7 @@ a:hover{
 width: fit-content;
 display: flex;
 justify-content: space-between;
+gap:2em;
 align-items: center;
 margin-right: 2em;
 .tooltip {
@@ -60,7 +61,7 @@ li{
     cursor: pointer;
     list-style-type: none;
     color: white;
-    margin-right: 2em;
+
 }
 li:hover{
     /* border-bottom: 2px solid white; */
@@ -69,7 +70,6 @@ li:hover{
     border: 1px solid white;
     background-color: white;
     opacity: 0.7;
-    margin-right: 2em;
     height: 20px;
     width: 2px;
 }
