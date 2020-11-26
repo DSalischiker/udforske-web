@@ -29,9 +29,12 @@ const Container = styled.div`
     opacity: 0.5;
   }
   div.Text {
+    font-weight: 700;
+    font-size:36px;
+    font-family: 'Archivo', sans-serif;
+    width: 100%;
     color: white;
     opacity: 1 !important;
-    font-size: 20px;
     position: absolute;
     top: 50%;
     left: 50%;
