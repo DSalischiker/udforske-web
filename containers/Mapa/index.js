@@ -7,6 +7,8 @@ import Link from "next/link";
 import { SeriesData } from "components";
 const Map = () => {
   const [series, setSeries] = useState([]);
+  const [countries, setCountries] = useState([]);
+  const [flagToShow, setFlagToShow] = useState([]);
   const [countryObj, setCountryObj] = useState();
   const [clickedSerie, setClickedSerie] = useState({});
   useEffect(() => {
@@ -18,12 +20,22 @@ const Map = () => {
           ...doc.data(),
         }));
         setSeries(seriesDB);
-      });
+      })
     // return (() => {
     //     //unsubscribe the listener here
     //     dbCall.unsubscribe()
     // })
-  }, []);
+  },
+  db.collection("countries")
+  .onSnapshot((snap) => {
+    const countriesDB = snap.docs.map((doc) => ({
+      id: doc.id,
+      ...doc.data(),
+    }));
+    setCountries(countriesDB);
+  })
+
+  , []);
 
   const K_MARGIN_TOP = 30;
   const K_MARGIN_RIGHT = 30;
@@ -384,14 +396,18 @@ const Map = () => {
         setCountryObj(countriesDB);
         console.log(countriesDB);
       });
+
     // return (() => {
     //     //unsubscribe the listener here
     //     dbCall.unsubscribe()
     // })
   }
   const onChildClick = (e) => {
-    setClickedSerie(series[e - 1]);
-    getCountryObj(series[e-1]);
+    setClickedSerie(series[e]);
+
+    setFlagToShow(countries.filter( country => country.name == series[e].countryName));
+    console.log(countries.filter( country => country.name == series[e].countryName));
+    /* getCountryObj(series[e]); */
     return (
       <>
         {/* {alert(series[e-1].title)}
@@ -454,8 +470,8 @@ const Map = () => {
             <SeriesData
               place={clickedSerie.location?.name}
               region={clickedSerie.location?.region}
-              countryName={countryObj && countryObj?.name}
-              countryFlag={countryObj && countryObj?.flag}
+              countryName={clickedSerie.countryName}
+              countryFlag={flagToShow ? flagToShow[0].flag : ''}
               description={clickedSerie.desc}
               date={clickedSerie.date}
             />
