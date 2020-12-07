@@ -12,12 +12,12 @@ const Nav = ({ children }) => {
           </Link>
         </li>
         <li>
-          {/* <Link href="/mapa"> */}
+          <Link href="/mapa">
           <div className='tooltip'>
             <a>mapa</a>
-            <span className="tooltiptext">Próximamente</span>
+            {/* <span className="tooltiptext">Próximamente</span> */}
             </div>
-          {/* </Link> */}
+          </Link>
         </li>
         <li>
           <Link href="/series">

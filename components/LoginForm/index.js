@@ -48,10 +48,13 @@ const LoginForm = () => {
                                  * of http.ClientRequest in Node.js
                                  */
                                 console.log(error.request);
+
                             } else {
                                 // Something happened in setting up the request and triggered an Error
                                 console.log('Error', error.message);
+
                             }
+
                             console.log(error);
                         }
                     }

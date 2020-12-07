@@ -56,6 +56,7 @@ const ListSeries = ({ id }) => {
   return (
     <Container>
       <h2>Lista de Series</h2>
+
       <ul>
         {series &&
           series.map(
@@ -69,16 +70,16 @@ const ListSeries = ({ id }) => {
             <span>{date}</span>
                   </div>
                   <div className="buttons">
-                    <button onClick={() => handleEdit(id)}>Edit</button>
+                    {/* <button onClick={() => handleEdit(id)}>Edit</button> */}
                     <button onClick={() => handleDelete(id)}>Delete</button>
                   </div>
                 </div>
-                {id === serieToEdit && (
+                {/* {id === serieToEdit && (
                   <EditSeriesForm
                     values={{ id, title, countryName, photos, desc, location, date }}
                     handleEditFormClose={handleEditFormClose}
                   />
-                )}
+                )} */}
               </li>
             )
           )}

@@ -24,7 +24,7 @@ const QuotesForm = ({userId}) => {
                 onSubmit={
                     async (values, { setSubmitting }) => {
                         try {
-                            const res = await axios.post('/api/quotes/create', {...values})
+                            const res = await axios.post('/api/quotes/create', {...values, user_id:userId})
                             const data = await res.data
                             setSubmitting(false);
                             setMessage(`Post creado, thanks ${data.text} (${res.status})`)

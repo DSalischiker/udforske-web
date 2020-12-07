@@ -5,7 +5,7 @@ import { Container } from "./styled";
 import { storage } from "lib/firebase";
 import "firebase/storage";
 
-const SliderForm = (props) => {
+const SliderForm = ({userId}) => {
   const [message, setMessage] = useState("");
     const [useSubmitting, setSubmitting] = useState();
   const allInputs = { imgUrl: "" };
@@ -57,6 +57,7 @@ const SliderForm = (props) => {
             console.log("photoUrl", photoUrl);
 
             const res = await axios.post("/api/slider/create", {
+              user_id:userId,
               url: photoUrl,
               alt: values.alt,
             });

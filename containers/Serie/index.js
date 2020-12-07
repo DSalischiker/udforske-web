@@ -6,7 +6,43 @@ import Link from "next/link";
 import axios from "axios";
 import Lightbox from "react-image-lightbox";
 import "react-image-lightbox/style.css"; // This only needs to be imported once in your app
+// SDK de Mercado Pago
+/* import mercadoPago from "mercadopago"; */
+
 const Serie = ({ props }) => {
+  // SDK de Mercado Pago
+  /* const mercadopago = require("mercadopago"); */
+
+  // Agrega credenciales
+  /* mercadopago.configure({
+    access_token: "process.env.NEXT_PUBLIC_MERCADOPAGO_PROD_ACCESS_TOKEN",
+  }); */
+
+  // Crea un objeto de preferencia
+  /* let preference = {
+    items: [
+      {
+        title: "Fotocuadro Udforske",
+        unit_price: 100,
+        quantity: 1,
+      },
+    ],
+  };
+
+  mercadopago.preferences
+    .create(preference)
+    .then(function (response) {
+      // Este valor reemplazará el string "<%= global.id %>" en tu HTML
+      global.id = response.body.id;
+    })
+    .catch(function (error) {
+      console.log(error);
+    }); */
+  // Agrega credenciales
+  /* MercadoPago.SDK.setAccessToken(
+    process.env.NEXT_PUBLIC_MERCADOPAGO_PROD_ACCESS_TOKEN
+  ); */
+
   console.log(props);
   const [serie, setSerie] = useState({});
 
@@ -26,7 +62,7 @@ const Serie = ({ props }) => {
     <Container>
       <section>
         {/* <div className='masonry'> */}
-        <h1 className='series-title'>
+        <h1 className="series-title">
           {title}
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -82,7 +118,18 @@ const Serie = ({ props }) => {
           {/* MAP DE IMÁGENES */}
           {photos.length &&
             photos.map((photo) => {
-              return <img src={photo} alt={`foto ${title}`} />;
+              return (
+                <div className='flex-column'>
+                  <img src={photo} alt={`foto ${title}`} />
+                  <div className='container-mp'>
+                  <button className='mp-button'
+                      src="https://www.mercadopago.com.ar/integrations/v1/web-payment-checkout.js"
+                      data-preference-id="190015731-94ba5344-3d74-4ea2-8894-737645b7aef2"
+                    ><a href='https://mpago.la/1pYcdgi' target='_blank'>Comprar</a>
+                  </button>
+                  </div>
+                </div>
+              );
             })}
           {/* <button type="button" onClick={() => SetIsOpen(true)}>
             {isOpen && (

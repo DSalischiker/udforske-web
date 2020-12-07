@@ -22,7 +22,35 @@ const Container = styled.div`
       margin-bottom: 0.2em;
     }
   }
-
+  .flex-column{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+  .container-mp{
+    /* width: 100%; */
+    display: flex;
+    justify-content: flex-end;
+  }
+  .mp-button{
+    height: 34px;
+    width: 135px;
+    background-color: #009ee3;
+    color: white;
+    border-radius: 5px;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    text-transform: capitalize !important;
+    font-weight: 500;
+    a{
+      text-decoration: none;
+      :visited{
+        color: white;
+      }
+    }
+  }
   .img-container{
     display:flex;
     flex-direction: column;

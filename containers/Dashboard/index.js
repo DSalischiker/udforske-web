@@ -5,21 +5,22 @@ import { Container } from "./styled";
 const Dashboard = () => {
   const auth = useProtected();
   if (!auth.user) return null;
+  console.log(auth.user)
   return (
     <Container>
       <h1>Dashboard_</h1>
       <p>{auth.user.email}</p>
       <section className="form">
-        <SliderForm/>
+        <SliderForm userId={auth.user.id}/>
         <ListSlider/>
       </section>
       <section className="form">
-        <QuotesForm />
+        <QuotesForm userId={auth.user.id}/>
         <ListQuotes />
       </section>
 
       <section className="form">
-        <SeriesForm />
+        <SeriesForm userId={auth.user.id}/>
         <ListSeries />
       </section>
     </Container>

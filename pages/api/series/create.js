@@ -12,7 +12,7 @@ export default async (req, res) => {
 - nombre locacion (string)
 - nombre provincia locación (string) */
     const {
-        /* user_id, //string */
+        user_id, //string
         /* id, */
         title, //string
         countryName, //string
@@ -22,7 +22,7 @@ export default async (req, res) => {
         date, //string
     } = req.body;
     console.log('SET',{
-        /* user_id, */
+        user_id,
         /* id, */
         title,
         countryName,
@@ -36,7 +36,7 @@ export default async (req, res) => {
         .doc()
         .set(
             {
-                /* user_id, */
+                user_id,
                 /* id, */
                 title,
                 countryName,

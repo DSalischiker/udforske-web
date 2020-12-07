@@ -6,7 +6,20 @@ import GooglePlacesAutocomplete from "react-google-places-autocomplete";
 import { geocodeByAddress, getLatLng } from "react-google-places-autocomplete";
 import firebase from "firebase";
 import "firebase/storage";
-const SeriesForm = (props) => {
+import ImageUploading from "react-images-uploading";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash, faEdit, faPlusSquare } from "@fortawesome/free-solid-svg-icons";
+
+const SeriesForm = ({userId}) => {
+  //REACT-IMAGES-UPLOAD
+  const maxNumber = 29;
+  const [images, setImages] = React.useState([]);
+  const onChange = (imageList, addUpdateIndex) => {
+    // data for submit
+    console.log(imageList);
+    setImages(imageList);
+  };
+
   const [message, setMessage] = useState("");
   const [dateSelected, setDate] = useState();
   const [place, setPlace] = useState(null);
@@ -82,12 +95,12 @@ const SeriesForm = (props) => {
           try {
             //Upload múltiples imágenes
             const promises = [];
-            files.forEach((file) => {
+            images.forEach((file) => {
               const uploadTask = firebase
                 .storage()
                 .ref()
-                .child(`photos/${values.title}/${file.name}`)
-                .put(file);
+                .child(`photos/${values.title}/${file.file.name}`)
+                .put(file.file);
 
               const promise = new Promise((resolve, reject) => {
                 uploadTask.on(
@@ -118,6 +131,7 @@ const SeriesForm = (props) => {
               .then(async () => {
                 alert("All files uploaded");
                 const res = await axios.post("/api/series/create", {
+                  user_id:userId,
                   title: values.title,
                   countryName: values.countryName,
                   photos: urlArray,
@@ -185,19 +199,7 @@ const SeriesForm = (props) => {
               />
               <ErrorMessage name="desc" component="div" />
             </div>
-            <div className="flex-row">
-              <div className="flex-row-item-1">
-                <Field
-                  type="file"
-                  name="photos"
-                  placeholder="Fotos"
-                  onChange={onFileChange}
-                  multiple
-                />
-                <ErrorMessage name="photos" component="div" />
-              </div>
-
-              <div className="flex-row-item-2">
+            <div /* className="flex-row-item-2" */>
                 <Field
                   type="date"
                   name="date"
@@ -206,13 +208,66 @@ const SeriesForm = (props) => {
                 />
                 <ErrorMessage name="date" component="div" />
               </div>
+            <div className="image-uploader">
+                {/* IMAGE UPLOADER COMPONENT */}
+                <ImageUploading
+                  multiple
+                  value={images}
+                  onChange={onChange}
+                  maxNumber={maxNumber}
+                  dataURLKey="data_url"
+                >
+                  {({
+                    imageList,
+                    onImageUpload,
+                    onImageRemoveAll,
+                    onImageUpdate,
+                    onImageRemove,
+                    isDragging,
+                    dragProps,
+                  }) => (
+                    // write your building UI
+                    <div className="upload__image-wrapper">
+                      <button
+                        className='btn-clickordrop principal'
+                        style={isDragging ? { borderColor: "#d2e603" } : undefined}
+                        onClick={onImageUpload}
+                        {...dragProps}
+                      >
+                        <FontAwesomeIcon className="icon plus-square" icon={faPlusSquare} /> <span>Click o soltá las imágenes acá</span>
+                      </button>
+                      &nbsp;
+                      <button className='btn-remove principal' onClick={onImageRemoveAll}>
+                      <FontAwesomeIcon className="icon trash" icon={faTrash} /> <span>Eliminá todas las imágenes</span>
+                      </button>
+                      {imageList.map((image, index) => (
+                        <div key={index} className="image-item">
+                          <img src={image["data_url"]} alt="" width="100" />
+                          <div className="image-item__btn-wrapper">
+                            <button className='btn-update secondary' onClick={() => onImageUpdate(index)}>
+                            <FontAwesomeIcon className="icon edit" icon={faEdit} /> Actualizar
+                            </button>
+                            <button className='btn-remove secondary' onClick={() => onImageRemove(index)}>
+                            <FontAwesomeIcon className="icon trash" icon={faTrash} /> <span>Eliminar</span>
+                            </button>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </ImageUploading>
+
+                {/* END IMAGE UPLOADER COMPONENT */}
+                <ErrorMessage name="photos" component="div" />
+
             </div>
 
-            <div className='btn-container'>
-            <button type="submit" disabled={isSubmitting}>
-              Enviar
-            </button>
-            <p className='message'>{message}</p>
+
+            <div className="btn-container">
+              <button className='btn-submit' type="submit" disabled={isSubmitting}>
+                Enviar Serie
+              </button>
+              <p className="message">{message}</p>
             </div>
           </Form>
         )}

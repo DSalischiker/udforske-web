@@ -89,4 +89,62 @@ export const Container = styled.div`
     color: #d2e603;
     font-size:12px;
   }
+  .upload__image-wrapper{
+    width: 100% !important;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+  }
+  .image-uploader{
+    width: 100% !important;
+    margin-bottom: 2em;
+    .image-uploader-container{
+      width: 100% !important;
+    }
+    .image-item{
+      width:80%;
+      display: flex;
+      margin: 1em 0;
+      gap: 1em;
+      align-items: center;
+      padding-bottom: 1em;
+      border-bottom: 1px solid rgba(34, 34, 34, 0.1);
+      justify-content: space-between;
+    }
+    button{
+      width: fit-content !important;
+      font-size:12px !important;
+    }
+  }
+  .principal{
+    width: 100% !important;
+    margin: 0 auto;
+  }
+  .secondary{
+    padding: 0.3em 0.4em !important;
+    border: none;
+    font-size:12px !important;
+  }
+  .btn-clickordrop{
+    padding: 5em !important;
+    min-width: 100% !important;
+    font-size: 14px !important;
+    border-style: dashed  !important;
+  }
+  .btn-remove{
+
+    color: #e74c3c;
+    border-color: #e74c3c;
+    :hover{
+      background-color: #e74c3c;
+    }
+  }
+  .btn-update{
+    color: #3498db;
+    border-color: #3498db;
+    :hover{
+      background-color: #3498db;
+    }
+  }
 `;

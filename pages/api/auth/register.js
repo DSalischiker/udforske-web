@@ -3,6 +3,7 @@ import { db, auth } from "lib/firebase";
 import cookie from "cookie";
 export default async (req, res) => {
     const {
+        userId,
         name,
         //  lastname,
         //  username,
@@ -24,6 +25,7 @@ export default async (req, res) => {
                 .doc(response.user.uid)
                 .set(
                     {
+                        userId: response.user.uid,
                         nombre: name,
                         //  apellido: lastname,
                         //   username,

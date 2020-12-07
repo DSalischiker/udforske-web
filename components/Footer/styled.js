@@ -15,7 +15,6 @@ const Container = styled.div`
       margin-top: 0 !important;
     }
     p {
-
       margin: 0 auto 2em auto !important;
     }
     img {
@@ -36,7 +35,7 @@ const Container = styled.div`
   align-items: center;
   /* border-top: 3px solid #d2e603; */
   p {
-    font-family: 'Open Sans', sans-serif;
+    font-family: "Open Sans", sans-serif;
     margin-right: 4em;
   }
   img {
@@ -72,7 +71,7 @@ const Container = styled.div`
       .behance:hover {
         color: #053eff;
       }
-      .envelope:hover{
+      .envelope:hover {
         color: #d2e603;
       }
     }
@@ -85,8 +84,15 @@ const Container = styled.div`
     height: 200px;
     a {
       text-decoration: underline;
-  text-decoration-color: #d2e603;
-color: #222222;
+      text-decoration-color: #d2e603;
+      color: #222222;
+      :hover{
+        text-decoration: none;
+        background-color: #d2e603;
+        color: #222222;
+        /* text-decoration-color: #222222;
+        color: #d2e603; */
+      }
     }
   }
 `;

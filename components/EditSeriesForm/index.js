@@ -7,6 +7,10 @@ import GooglePlacesAutocomplete from "react-google-places-autocomplete";
 import { geocodeByAddress, getLatLng } from "react-google-places-autocomplete";
 import firebase from "firebase";
 import "firebase/storage";
+import ImageUploading from "react-images-uploading";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash, faEdit, faPlusSquare } from "@fortawesome/free-solid-svg-icons";
+
 const EditSeriesForm = ({ values, handleEditFormClose }) => {
   const { id, title, countryName, photos, desc, location, date } = values;
   const [message, setMessage] = useState("");
@@ -23,6 +27,15 @@ const EditSeriesForm = ({ values, handleEditFormClose }) => {
       setFiles((prevState) => [...prevState, newFile]);
     }
     console.log("FILES", files);
+  };
+
+  //REACT-IMAGES-UPLOAD
+  const maxNumber = 29;
+  const [images, setImages] = React.useState([]);
+  const onChange = (imageList, addUpdateIndex) => {
+    // data for submit
+    console.log(imageList);
+    setImages(imageList);
   };
 
   const handlePlaceChange = (e) => {
@@ -72,12 +85,12 @@ const EditSeriesForm = ({ values, handleEditFormClose }) => {
           try {
             //Upload múltiples imágenes
             const promises = [];
-            files.forEach((file) => {
+            images.forEach((file) => {
               const uploadTask = firebase
                 .storage()
                 .ref()
-                .child(`photos/${values.title}/${file.name}`)
-                .put(file);
+                .child(`photos/${values.title}/${file.file.name}`)
+                .put(file.file);
 
               const promise = new Promise((resolve, reject) => {
                 uploadTask.on(
@@ -178,19 +191,7 @@ const EditSeriesForm = ({ values, handleEditFormClose }) => {
               />
               <ErrorMessage name="desc" component="div" />
             </div>
-            <div className="flex-row">
-              <div className="flex-row-item-1">
-                <Field
-                  type="file"
-                  name="photos"
-                  placeholder="Fotos"
-                  onChange={onFileChange}
-                  multiple
-                />
-                <ErrorMessage name="photos" component="div" />
-              </div>
-
-              <div className="flex-row-item-2">
+            <div /* className="flex-row-item-2" */>
                 <Field
                   type="date"
                   name="date"
@@ -199,6 +200,71 @@ const EditSeriesForm = ({ values, handleEditFormClose }) => {
                 />
                 <ErrorMessage name="date" component="div" />
               </div>
+            <div className="image-uploader">
+                {/* IMAGE UPLOADER COMPONENT */}
+                <ImageUploading
+                  multiple
+                  value={photos}
+                  onChange={onChange}
+                  maxNumber={maxNumber}
+                  dataURLKey="data_url"
+                >
+                  {({
+                    imageList,
+                    onImageUpload,
+                    onImageRemoveAll,
+                    onImageUpdate,
+                    onImageRemove,
+                    isDragging,
+                    dragProps,
+                  }) => (
+                    // write your building UI
+                    <div className="upload__image-wrapper">
+                      <button
+                        className='btn-clickordrop principal'
+                        style={isDragging ? { borderColor: "#d2e603" } : undefined}
+                        onClick={onImageUpload}
+                        {...dragProps}
+                      >
+                        <FontAwesomeIcon className="icon plus-square" icon={faPlusSquare} /> <span>Click o soltá las imágenes acá</span>
+                      </button>
+                      &nbsp;
+                      <button className='btn-remove principal' onClick={onImageRemoveAll}>
+                      <FontAwesomeIcon className="icon trash" icon={faTrash} /> <span>Eliminá todas las imágenes</span>
+                      </button>
+                      {photos.map((src) => (
+                        <div className="image-item">
+                          <img src={src} alt="" width="100" />
+                          <div className="image-item__btn-wrapper">
+                            <button className='btn-update secondary' onClick={() => onImageUpdate(urlArray[src])}>
+                            <FontAwesomeIcon className="icon edit" icon={faEdit} /> Actualizar
+                            </button>
+                            <button className='btn-remove secondary' onClick={() => onImageRemove(urlArray[src])}>
+                            <FontAwesomeIcon className="icon trash" icon={faTrash} /> <span>Eliminar</span>
+                            </button>
+                          </div>
+                        </div>
+                      ))}
+                      {/* {imageList.map((image, index) => (
+                        <div key={index} className="image-item">
+                          <img src={image["data_url"]} alt="" width="100" />
+                          <div className="image-item__btn-wrapper">
+                            <button className='btn-update secondary' onClick={() => onImageUpdate(index)}>
+                            <FontAwesomeIcon className="icon edit" icon={faEdit} /> Actualizar
+                            </button>
+                            <button className='btn-remove secondary' onClick={() => onImageRemove(index)}>
+                            <FontAwesomeIcon className="icon trash" icon={faTrash} /> <span>Eliminar</span>
+                            </button>
+                          </div>
+                        </div>
+                      ))} */}
+                    </div>
+                  )}
+                </ImageUploading>
+
+                {/* END IMAGE UPLOADER COMPONENT */}
+                <ErrorMessage name="photos" component="div" />
+
             </div>
 
             <div className="btn-container">
