@@ -1,10 +1,11 @@
 import styled from "styled-components";
 
 const Container = styled.div`
+
   @media (max-width: 1000px) {
     padding-bottom: 2em;
     margin-top: 0 !important;
-    .legales {
+    .footer-bottom {
       flex-direction: column;
       justify-content: center;
       width: 100%;
@@ -26,7 +27,7 @@ const Container = styled.div`
   max-width: 100%;
   height: 200px;
   position: absolute;
-  /* bottom: 0; */
+  bottom: 0;
   background-color: white;
   color: #222222;
   display: flex;
@@ -76,7 +77,7 @@ const Container = styled.div`
       }
     }
   }
-  .legales {
+  .footer-bottom {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -86,13 +87,18 @@ const Container = styled.div`
       text-decoration: underline;
       text-decoration-color: #d2e603;
       color: #222222;
-      :hover{
+      /* :hover{
         text-decoration: none;
         background-color: #d2e603;
         color: #222222;
-        /* text-decoration-color: #222222;
-        color: #d2e603; */
-      }
+      } */
+    }
+  }
+  .legales{
+    a:hover{
+      text-decoration: none;
+        background-color: #d2e603;
+        color: #222222;
     }
   }
 `;

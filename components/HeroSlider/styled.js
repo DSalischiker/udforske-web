@@ -21,4 +21,7 @@ img{
     /* height: 80vh !important; */
     /* max-height: 500px; */
 }
+.aws-btn{
+    --loader-bar-color: #d2e603;
+}
 `;

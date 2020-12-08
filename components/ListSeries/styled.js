@@ -29,9 +29,17 @@ export const Container = styled.div`
   }
   .data{
     display:flex;
-    justify-content: space-between;
+    justify-content: space-between !important;
     align-items: center;
     gap: 2em;
+    width: 90%;
+    h3{
+      width: 100px;
+    }
+    span{
+      width: 100px;
+      /* margin-right: 1em; */
+    }
   }
   .buttons {
     display: flex;

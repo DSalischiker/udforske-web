@@ -63,11 +63,11 @@ const ListSeries = ({ id }) => {
             ({ id, title, countryName, photos, desc, location, date }) => (
               <li key={id}>
                 <div className="flex-container">
-                    <div className='data'>
-                  <h3>{title}</h3>
-                  <img src={photos[0]} alt={`img-${title}`} />
-            <span>{location.name}</span>
-            <span>{date}</span>
+                  <div className="data">
+                    <h3>{title}</h3>
+                    <img src={photos[0]} alt={`img-${title}`} />
+                    <span>{location.name}</span>
+                    <span>{date}</span>
                   </div>
                   <div className="buttons">
                     {/* <button onClick={() => handleEdit(id)}>Edit</button> */}

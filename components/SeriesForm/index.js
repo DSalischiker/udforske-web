@@ -9,8 +9,10 @@ import "firebase/storage";
 import ImageUploading from "react-images-uploading";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash, faEdit, faPlusSquare } from "@fortawesome/free-solid-svg-icons";
-
+import date from 'date-and-time';
+import es from 'date-and-time/locale/es';
 const SeriesForm = ({userId}) => {
+  date.locale(es);
   //REACT-IMAGES-UPLOAD
   const maxNumber = 29;
   const [images, setImages] = React.useState([]);
@@ -54,9 +56,12 @@ const SeriesForm = ({userId}) => {
   };
 
   const handleDateChange = (e) => {
-    const dateFromInput = e.target.value;
-    setDate(dateFromInput);
-    console.log(dateFromInput);
+    const dateFromInput = new Date(e.target.value);
+    console.log('FECHAAAA', dateFromInput);
+    const formatDate = date.format(dateFromInput, 'MMMM, YYYY');
+    console.log('FECHA FORMATEADA', formatDate);
+    setDate(formatDate);
+    /* console.log(dateFromInput); */
   };
 
   return (
@@ -68,7 +73,7 @@ const SeriesForm = ({userId}) => {
           countryName: "",
           desc: "",
           photos: [],
-          date: "2020-11-16",
+          /* date: "", */
         }}
         validate={(values) => {
           const errors = {};

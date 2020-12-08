@@ -6,8 +6,8 @@ import Image from "next/image";
 import { Container } from "./styled";
 import AwesomeSlider from "react-awesome-slider";
 import "react-awesome-slider/dist/styles.css";
-import withAutoplay from 'react-awesome-slider/dist/autoplay';
-import 'react-awesome-slider/dist/styles.css';
+import withAutoplay from "react-awesome-slider/dist/autoplay";
+import "react-awesome-slider/dist/styles.css";
 
 const HeroSlider = ({ children }) => {
   const AutoplaySlider = withAutoplay(AwesomeSlider);
@@ -30,15 +30,17 @@ const HeroSlider = ({ children }) => {
   }, []);
   return (
     <Container>
-      <AutoplaySlider play={true}
-    cancelOnInteraction={false} // should stop playing on user interaction
-    interval={5000} bullets={false}>
-      {/* Map de imgs */}
-        {slider.length && slider.map((slide) => {
-          return(
-            <div key={slide.id} data-src={slide.url} alt={slide.alt} />
-          )
-        })}
+      <AutoplaySlider
+        play={true}
+        cancelOnInteraction={false} // should stop playing on user interaction
+        interval={5000}
+        bullets={false}
+      >
+        {/* Map de imgs */}
+        {slider.length &&
+          slider.map((slide) => {
+            return <div key={slide.id} data-src={slide.url} alt={slide.alt} />;
+          })}
       </AutoplaySlider>
     </Container>
   );

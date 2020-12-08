@@ -9,20 +9,20 @@ width: 85%;
     margin-left: -50px !important;
     margin: 0 auto;
     background-color: white;
-width: 100px;
-height: 100px;
-    max-width:100px !important;
-    max-height: 100px !important;
+width: 75px;
+height: 75px;
+    max-width:75px !important;
+    max-height: 75px !important;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .img-marker{
-    padding: 0.4em;
-    width: 100px;
-height: 100px;
-    max-width: 100px;
-    max-height: 100px;
+    padding: 0.3em;
+    width: 75px;
+height: 75px;
+    max-width: 75px;
+    max-height: 75px;
     object-fit: cover;
     /* border: 3px solid #222222; */
 }

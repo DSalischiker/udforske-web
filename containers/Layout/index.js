@@ -5,7 +5,6 @@ import { Header, Footer } from "components";
 import { Container, QuoteDiv } from "./styled";
 const Layout = ({ children }) => {
   const [quotes, setQuotes] = useState([]);
-  const [quoteToEdit, setQuoteToEdit] = useState("");
 
   useEffect(() => {
     db.collection("quotes")
@@ -28,10 +27,9 @@ const Layout = ({ children }) => {
       <Header id="top"/>
       <Main>
         {children}
-        <QuoteDiv>
-          {/* {quotes ? <p>{quotes[0]}</p> : ''} */}
-          <p>{quotes && quotes.text}</p>
-        </QuoteDiv>
+        {/* <QuoteDiv>
+          <em>"{quotes.length && quotes[Math.floor(Math.random() * quotes.length)].text}"</em>
+        </QuoteDiv> */}
       </Main>
       <Footer />
     </Container>
