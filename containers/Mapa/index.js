@@ -420,7 +420,7 @@ const Map = () => {
     <Container>
       {/* NEXT_PUBLIC_GOOGLE_API_KEY */}
       {/* Important! Always set the container height explicitly */}
-      <div style={{ height: "70vh", width: "100%" }}>
+      <div className='div-map' style={{ height: "70vh", width: "100%" }}>
         <GoogleMapReact
           bootstrapURLKeys={{ key: process.env.NEXT_PUBLIC_GOOGLE_API_KEY }}
           defaultCenter={{ lat: -34.6, lng: -58.37 }}

@@ -31,8 +31,8 @@ export const Container = styled.div`
     }
   }
   .btn-selector {
-    span {
-      margin-right: 1em;
+    .icon {
+      margin-left: 1em;
     }
     width: 30%;
     cursor: pointer;

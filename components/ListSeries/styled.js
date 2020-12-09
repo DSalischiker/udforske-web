@@ -1,6 +1,16 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+@media (max-width: 1000px) {
+    margin: 2em auto 0 auto;
+    .flex-container{
+      flex-direction: column;
+      gap: 1em;
+    }
+    .data{
+      flex-wrap: wrap;
+    }
+  }
   width: 100%;
   margin: 2em 0 0 0;
   ul {

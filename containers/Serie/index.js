@@ -119,15 +119,9 @@ const Serie = ({ props }) => {
           {photos.length &&
             photos.map((photo) => {
               return (
-                <div className='flex-column'>
+                <div className="flex-column">
                   <img src={photo} alt={`foto ${title}`} />
-                  <div className='container-mp'>
-                  <button className='mp-button'
-                      src="https://www.mercadopago.com.ar/integrations/v1/web-payment-checkout.js"
-                      data-preference-id="190015731-94ba5344-3d74-4ea2-8894-737645b7aef2"
-                    ><a href='https://mpago.la/1pYcdgi' target='_blank'>Comprar</a>
-                  </button>
-                  </div>
+
                 </div>
               );
             })}

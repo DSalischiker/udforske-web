@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 
 const Container = styled.div`
+@media (max-width: 700px) {
+    width: 100% !important;
+    margin: 0 !important;
+  }
 width: 85%;
   max-width: 1200px !important;
   margin: 2em auto 0 auto;

@@ -7,6 +7,7 @@ const Container = styled.div`
     }
     .country{
         width: fit-content !important;
+        margin-bottom: 1em !important;
     }
 }
 margin: 80px auto 0 auto;
