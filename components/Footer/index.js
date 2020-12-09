@@ -26,7 +26,7 @@ const Footer = ({ children }) => {
                 />
               </a>
             </Link>
-            <Link href="mailto:diegosalischiker711@gmail.com?Subject=Contacto%20desde%20Udforske%20web%20">
+            <Link href="https://mail.google.com/mail/?view=cm&fs=1&to=diegosalischiker711@gmail.com&su=Contacto+desde+Udforske+web">
               <a target="_blank">
                 <FontAwesomeIcon className="icon envelope" icon={faEnvelope} />
               </a>

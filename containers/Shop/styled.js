@@ -11,8 +11,8 @@ margin: 0 auto 100px auto;
     background-repeat: no-repeat;
     margin: 0 auto;
     width: 100%;
+    max-width: 1200px;
     background-position: center;
-
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -39,15 +39,15 @@ img{
     /* justify-content: flex-end; */
     p{
         color: white;
-        margin-bottom: 1em;
         text-align: center;
+        line-height: 1.5em;
     }
   }
 
   .mp-button{
-      margin: 0 auto;
+      margin: 1em auto 1em auto;
     height: 34px;
-    width: 135px;
+    width: fit-content;
     background-color: #009ee3;
     opacity: 1;
     color: white;

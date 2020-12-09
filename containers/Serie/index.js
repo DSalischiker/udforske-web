@@ -119,7 +119,7 @@ const Serie = ({ props }) => {
           {photos.length &&
             photos.map((photo) => {
               return (
-                <div className="flex-column">
+                <div className="flex">
                   <img src={photo} alt={`foto ${title}`} />
 
                 </div>

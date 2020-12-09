@@ -24,6 +24,7 @@ color: white; */
 }
 .title{
     justify-content: flex-end;
+    align-items: flex-start !important;
 }
 .flex-row{
     display:flex;
@@ -43,7 +44,7 @@ img{
     gap: 0.3em;
 }
 h1{font-size: 1.8em; font-weight: 700;}
-h3{font-size: 1em; font-weight: 700;}
+h3{font-size: 1em; font-weight: 700; text-transform: capitalize}
 p{ font-size: 0.9em; font-weight: 300; margin-bottom: 2em;}
 
 `;

@@ -22,7 +22,7 @@ const Container = styled.div`
       margin-bottom: 0.2em;
     }
   }
-  .flex-column{
+  .flex{
     align-items: center;
     display: flex;
     flex-direction: column;

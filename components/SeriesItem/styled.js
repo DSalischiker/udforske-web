@@ -2,9 +2,10 @@ import styled from "styled-components";
 
 const Container = styled.div`
   width: 100%;
-  height: auto;
+  height: 98%;
   .Content {
     position: relative;
+    height: 100%;
   }
   img {
     display: block;
@@ -23,6 +24,7 @@ const Container = styled.div`
     opacity: 0;
     transition: 0.5s ease;
     background-color: #222222;
+    overflow: hidden;
   }
 
   :hover .Overlay {

@@ -90,9 +90,9 @@ const SeriesForm = ({userId}) => {
           if (!values.photos) {
             errors.photos = "Requerido";
           }
-          if (!values.date) {
+          /* if (!values.date) {
             errors.date = "Requerido";
-          }
+          } */
 
           return errors;
         }}
@@ -234,6 +234,7 @@ const SeriesForm = ({userId}) => {
                     // write your building UI
                     <div className="upload__image-wrapper">
                       <button
+                      type="button"
                         className='btn-clickordrop principal'
                         style={isDragging ? { borderColor: "#d2e603" } : undefined}
                         onClick={onImageUpload}
@@ -242,17 +243,17 @@ const SeriesForm = ({userId}) => {
                         <FontAwesomeIcon className="icon plus-square" icon={faPlusSquare} /> <span>Click o soltá las imágenes acá</span>
                       </button>
                       &nbsp;
-                      <button className='btn-remove principal' onClick={onImageRemoveAll}>
+                      <button type="button" className='btn-remove principal' onClick={onImageRemoveAll}>
                       <FontAwesomeIcon className="icon trash" icon={faTrash} /> <span>Eliminá todas las imágenes</span>
                       </button>
                       {imageList.map((image, index) => (
                         <div key={index} className="image-item">
                           <img src={image["data_url"]} alt="" width="100" />
                           <div className="image-item__btn-wrapper">
-                            <button className='btn-update secondary' onClick={() => onImageUpdate(index)}>
+                            <button type="button" className='btn-update secondary' onClick={() => onImageUpdate(index)}>
                             <FontAwesomeIcon className="icon edit" icon={faEdit} /> Actualizar
                             </button>
-                            <button className='btn-remove secondary' onClick={() => onImageRemove(index)}>
+                            <button type="button" className='btn-remove secondary' onClick={() => onImageRemove(index)}>
                             <FontAwesomeIcon className="icon trash" icon={faTrash} /> <span>Eliminar</span>
                             </button>
                           </div>
