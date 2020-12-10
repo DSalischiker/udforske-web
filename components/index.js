@@ -19,9 +19,6 @@ export {default as SliderForm} from './SliderForm';
 //LISTSLIDER
 export {default as ListSlider} from './ListSlider';
 
-//IMGFORM
-export {default as StepOne} from './StepOne';
-
 //SERIESFORM
 export {default as SeriesForm} from './SeriesForm';
 
