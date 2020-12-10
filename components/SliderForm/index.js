@@ -13,7 +13,6 @@ const SliderForm = ({userId}) => {
   const [imageAsUrl, setImageAsUrl] = useState(allInputs);
 
   //onChange 1 imagen
-  console.log(imageAsFile);
   const handleImageAsFile = (e) => {
     const image = e.target.files[0];
     setImageAsFile(image);
@@ -47,14 +46,12 @@ const SliderForm = ({userId}) => {
               .put(imageAsFile)
               .then(async (snapshot) => {
                 return await snapshot.ref.getDownloadURL().then((url) => {
-                  console.log("foto cargada", url);
                   return url;
                 });
               })
               .catch((e) => {
                 console.error(e);
               });
-            console.log("photoUrl", photoUrl);
 
             const res = await axios.post("/api/slider/create", {
               user_id:userId,

@@ -18,7 +18,6 @@ const ListSeries = ({ id }) => {
           ...doc.data(),
         }));
         setSeries(seriesDB);
-        console.log(seriesDB);
       });
     // return (() => {
     //     //unsubscribe the listener here

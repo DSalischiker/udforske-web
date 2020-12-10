@@ -18,12 +18,12 @@ export default async (req, res) => {
             }
         )
         .then(() => {
-            console.log("Firebase 4 - Post Edited");
-            res.status(200).json({ message: 'Post Creado', title })
+            console.log("Firebase 4 - Post Editado");
+            res.status(200).json({ message: 'Post Editado', title })
             res.end();
         })
         .catch((error) =>
-            console.log("Hubo un error creando el post", error)
+            console.log("Hubo un error editando el post", error)
         );
 
 };

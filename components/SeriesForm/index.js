@@ -11,6 +11,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash, faEdit, faPlusSquare } from "@fortawesome/free-solid-svg-icons";
 import date from 'date-and-time';
 import es from 'date-and-time/locale/es';
+
 const SeriesForm = ({userId}) => {
   date.locale(es);
   //REACT-IMAGES-UPLOAD
@@ -18,7 +19,6 @@ const SeriesForm = ({userId}) => {
   const [images, setImages] = React.useState([]);
   const onChange = (imageList, addUpdateIndex) => {
     // data for submit
-    console.log(imageList);
     setImages(imageList);
   };
 
@@ -37,7 +37,6 @@ const SeriesForm = ({userId}) => {
       // add an "id" property to each File object
       setFiles((prevState) => [...prevState, newFile]);
     }
-    console.log("FILES", files);
   };
 
   const handlePlaceChange = (e) => {
@@ -57,11 +56,8 @@ const SeriesForm = ({userId}) => {
 
   const handleDateChange = (e) => {
     const dateFromInput = new Date(e.target.value);
-    console.log('FECHAAAA', dateFromInput);
     const formatDate = date.format(dateFromInput, 'MMMM, YYYY');
-    console.log('FECHA FORMATEADA', formatDate);
     setDate(formatDate);
-    /* console.log(dateFromInput); */
   };
 
   return (
@@ -204,7 +200,7 @@ const SeriesForm = ({userId}) => {
               />
               <ErrorMessage name="desc" component="div" />
             </div>
-            <div /* className="flex-row-item-2" */>
+            <div>
                 <Field
                   type="date"
                   name="date"

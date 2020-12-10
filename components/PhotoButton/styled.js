@@ -14,19 +14,6 @@ const Container = styled(motion.a)`
   :visited {
     color: white;
   }
-  /* :hover {
-    transition: transform 0.5s;
-    max-height: 500px;
-    img {
-      height: 500px;
-      object-fit: cover;
-      position: relative;
-      z-index: 1;
-      h1 {
-        font-size: 24px;
-      }
-    }
-  } */
   img {
     height: 70px;
     width: 100%;
@@ -34,9 +21,6 @@ const Container = styled(motion.a)`
     z-index: 1;
     filter: brightness(75%);
   }
-  /* background: url("${(props) => props.src}"); */
-  /* background-image: url('${(props) => props.background}');
-  background-size: 100%; */
 
   h1 {
     position: absolute;

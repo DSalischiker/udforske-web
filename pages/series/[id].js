@@ -6,7 +6,6 @@ import axios from "axios";
 /* import { getCollectionBySlug } from 'utils'; */
 
 export default function Serie(props) {
-  console.log("PROPS", props);
   return <SerieContainer props={props}/>;
 }
 
@@ -38,7 +37,6 @@ export const getServerSideProps = async ({ query }) => {
           };
         });
     });
-    console.log("COUNTRYOBJ",countryObj)
   return {
 
     props: {

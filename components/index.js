@@ -46,9 +46,6 @@ export {default as HeroSlider} from './HeroSlider';
 //BIO
 export {default as Bio} from './Bio';
 
-//LEAFLETMAP
-export {default as LeafletMap} from './LeafletMap';
-
 //PHOTOBUTTON
 export {default as PhotoButton} from './PhotoButton';
 

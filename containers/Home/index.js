@@ -2,14 +2,11 @@ import { HeroSlider, Bio, PhotoButton } from "components";
 import { Container, Img } from "./styled";
 import Image from "next/image";
 const Home = () => {
-
   return (
     <Container>
       <div className="Hero-Container">
         <HeroSlider />
-        {/* <Img src="./slider1.jpg"></Img> */}
       </div>
-
       <div className="Index-Container">
         <section>
           <Bio

@@ -170,7 +170,6 @@ export const Container = styled.div`
     border-style: dashed  !important;
   }
   .btn-remove{
-
     color: #e74c3c;
     border-color: #e74c3c;
     :hover{

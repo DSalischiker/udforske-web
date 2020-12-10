@@ -14,7 +14,6 @@ const SeriesItem = ({ href, src, name, data }) => {
               width={1646}
               height={1100}
             />
-            {/* <img src={src} alt="serie" /> */}
             <div className="Overlay">
               <div className="Text">{name}</div>
             </div>

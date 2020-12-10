@@ -20,7 +20,7 @@ const Dashboard = () => {
 
   const auth = useProtected();
   if (!auth.user) return null;
-  console.log(auth.user);
+  console.log('USUARIO', auth.user);
 
   return (
     <Container>
@@ -119,20 +119,6 @@ const Dashboard = () => {
       ) : (
         ""
       )}
-
-      {/* <section className="form">
-        <SliderForm userId={auth.user.id}/>
-        <ListSlider/>
-      </section>
-      <section className="form">
-        <QuotesForm userId={auth.user.id}/>
-        <ListQuotes />
-      </section>
-
-      <section className="form">
-        <SeriesForm userId={auth.user.id}/>
-        <ListSeries />
-      </section> */}
     </Container>
   );
 };

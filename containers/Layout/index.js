@@ -5,7 +5,6 @@ import { Header, Footer } from "components";
 import { Container, QuoteDiv } from "./styled";
 const Layout = ({ children }) => {
   const [quotes, setQuotes] = useState([]);
-
   useEffect(() => {
     db.collection("quotes")
       /* .where("id", "==", id) */
@@ -17,10 +16,6 @@ const Layout = ({ children }) => {
         setQuotes(quotesDB);
         console.log(quotesDB);
       });
-    // return (() => {
-    //     //unsubscribe the listener here
-    //     dbCall.unsubscribe()
-    // })
   }, []);
   return (
     <Container>

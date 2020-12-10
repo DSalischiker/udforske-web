@@ -87,11 +87,6 @@ const Container = styled.div`
       text-decoration: underline;
       text-decoration-color: #d2e603;
       color: #222222;
-      /* :hover{
-        text-decoration: none;
-        background-color: #d2e603;
-        color: #222222;
-      } */
     }
   }
   .legales{

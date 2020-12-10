@@ -43,13 +43,16 @@ const Footer = ({ children }) => {
             </a>
           </Link>
 
-          <div className='legales'>
-          <p>
-            <a target='_blank' href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
-              algunos derechos reservados
-            </a>
-            . Buenos Aires, Argentina. 2020.
-          </p>
+          <div className="legales">
+            <p>
+              <a
+                target="_blank"
+                href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
+              >
+                algunos derechos reservados
+              </a>
+              . Buenos Aires, Argentina. 2020.
+            </p>
           </div>
         </div>
       </FooterContainer>

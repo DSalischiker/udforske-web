@@ -61,7 +61,6 @@ const Serie = ({ props }) => {
   return (
     <Container>
       <section>
-        {/* <div className='masonry'> */}
         <h1 className="series-title">
           {title}
           <svg
@@ -147,18 +146,6 @@ const Serie = ({ props }) => {
             Open Lightbox
           </button> */}
         </div>
-        {/*
-          <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}>
-          <Masonry gutter="20px">
-
-            {photos.length && photos.map((photo) => {
-              return (
-                <img src={photo} alt={`foto ${title}`}/>
-              )
-            })}
-          </Masonry>
-        </ResponsiveMasonry> */}
-        {/* </div> */}
       </section>
       <section>
         <SeriesData

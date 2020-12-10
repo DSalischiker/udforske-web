@@ -1,9 +1,7 @@
 import { React, useState, useEffect } from "react";
 import GoogleMapReact from "google-map-react";
 import { db } from "lib/firebase";
-import dynamic from "next/dynamic";
 import { Container } from "./styled";
-import Link from "next/link";
 import { SeriesData } from "components";
 const Map = () => {
   const [series, setSeries] = useState([]);
@@ -13,7 +11,6 @@ const Map = () => {
   const [clickedSerie, setClickedSerie] = useState({});
   useEffect(() => {
     db.collection("series")
-      /* .where("id", "==", id) */
       .onSnapshot((snap) => {
         const seriesDB = snap.docs.map((doc) => ({
           id: doc.id,
@@ -21,10 +18,6 @@ const Map = () => {
         }));
         setSeries(seriesDB);
       })
-    // return (() => {
-    //     //unsubscribe the listener here
-    //     dbCall.unsubscribe()
-    // })
   },
   db.collection("countries")
   .onSnapshot((snap) => {
@@ -34,7 +27,6 @@ const Map = () => {
     }));
     setCountries(countriesDB);
   })
-
   , []);
 
   const K_MARGIN_TOP = 30;
@@ -385,40 +377,12 @@ const Map = () => {
       ],
     };
   };
-  const getCountryObj = (serie) => {
-    db.collection("countries")
-      .where("name", "==", serie.countryName)
-      .onSnapshot((snap) => {
-        const countriesDB = snap.docs.map((doc) => ({
-          id: doc.id,
-          ...doc.data(),
-        }));
-        setCountryObj(countriesDB);
-        console.log(countriesDB);
-      });
-
-    // return (() => {
-    //     //unsubscribe the listener here
-    //     dbCall.unsubscribe()
-    // })
-  }
   const onChildClick = (e) => {
     setClickedSerie(series[e]);
-
     setFlagToShow(countries.filter( country => country.name == series[e].countryName));
-    console.log(countries.filter( country => country.name == series[e].countryName));
-    /* getCountryObj(series[e]); */
-    return (
-      <>
-        {/* {alert(series[e-1].title)}
-      {console.log('e', e)} */}
-        {/* <div>{`${series[e-1].title}`}</div> */}
-      </>
-    );
   };
   return (
     <Container>
-      {/* NEXT_PUBLIC_GOOGLE_API_KEY */}
       {/* Important! Always set the container height explicitly */}
       <div className='div-map' style={{ height: "70vh", width: "100%" }}>
         <GoogleMapReact
@@ -439,11 +403,6 @@ const Map = () => {
           {series &&
             series.map(
               (serie) => (
-                {
-                  /* <Link lat={serie.location.lat}
-              lng={serie.location.lng}
-              data={serie} href={`/series/${serie.id}`} passHref> */
-                },
                 (
                   <div
                     className="div-marker"
@@ -458,8 +417,6 @@ const Map = () => {
                     ></img>
                   </div>
                 )
-
-                /* </Link> */
               )
             )}
         </GoogleMapReact>

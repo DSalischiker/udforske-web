@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { db } from "lib/firebase";
-import Link from "next/link";
 import axios from "axios";
 import { EditQuoteForm } from "components";
 import { Container } from "./styled";
@@ -54,28 +53,26 @@ const ListQuotes = ({ id }) => {
 
   return (
     <Container>
-        <h2>Lista de Quotes</h2>
+      <h2>Lista de Quotes</h2>
       <ul>
         {quotes &&
           quotes.map(({ id, text, author }) => (
             <li key={id}>
               <div className="flex-container">
-
-                  <p><em>{text}</em> - {author}</p>
-
-
+                <p>
+                  <em>{text}</em> - {author}
+                </p>
                 <div className="buttons">
                   <button onClick={() => handleEdit(id)}>Edit</button>
                   <button onClick={() => handleDelete(id)}>Delete</button>
                 </div>
-
               </div>
               {id === quoteToEdit && (
-                  <EditQuoteForm
-                    values={{ id, text, author }}
-                    handleEditFormClose={handleEditFormClose}
-                  />
-                )}
+                <EditQuoteForm
+                  values={{ id, text, author }}
+                  handleEditFormClose={handleEditFormClose}
+                />
+              )}
             </li>
           ))}
       </ul>

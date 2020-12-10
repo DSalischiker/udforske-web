@@ -19,12 +19,6 @@ const Shop = () => {
           <p>Bicimensajería a todo CABA, retiro por Villa Crespo o MercadoEnvíos a todo el país.</p>
         </div>
       </div>
-      {/* <img
-          src="https://firebasestorage.googleapis.com/v0/b/udforske-f73ff.appspot.com/o/images%2Fweb.jpg?alt=media&token=6545448d-f54f-4aaf-8bf3-6be7c93f2f45"
-          alt="mockup"
-        /> */}
-
-      {/* <div className="Text overlay-content">prueba</div> */}
     </Container>
   );
 };

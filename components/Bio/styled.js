@@ -22,8 +22,6 @@ const Container = styled.div`
       }
     }
     img {
-      /* border: 2px solid #222222; */
-      /* border-radius: 50%; */
       width: 50%;
       height: auto;
       margin-left: 4em;
@@ -53,8 +51,6 @@ const Container = styled.div`
   .img {
   }
   img {
-    /* border: 2px solid #222222; */
-    /* border-radius: 50%; */
     width: 200px;
     height: auto;
     margin-left: 4em;
